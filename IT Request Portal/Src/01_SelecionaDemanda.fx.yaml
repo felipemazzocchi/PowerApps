@@ -1,0 +1,222 @@
+"'01_SelecionaDemanda' As screen":
+    BackgroundImage: =SelecionaDEMANDA
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    Bttn_IniciaForm_1 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(VarDemanda="Novos Negócios",RGBA(166, 166, 166, 1),RGBA(245, 200, 82, 1))
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =80
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: |-
+            =Set(varDicaTicket,"<p align='left'>Você selecionou a demanda: <br><b>Novos Negócios</b><br><br><p align='left'><p align='justify'>Alterações de estruturas organizacionais e/ou segmento de mercado (Ex.: aquisições, novas empresas, etc).<p align='justify'>") ; Set(varNavegaDemanda,('02_NovosNegocios')) ; Set(VarDemanda,"Novos Negócios")
+        PaddingBottom: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Novos Negócios"
+        Tooltip: |-
+            ="Esse tipo de demanda se refere a alterações de estruturas organizacionais e/ou segmento de mercado (Ex.: aquisições, novas empresas, etc)"
+        Width: =400
+        X: =280
+        Y: =292
+        ZIndex: =6
+
+    Bttn_IniciaForm_2 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(VarDemanda="Soluções e Tecnologias",RGBA(166, 166, 166, 1),RGBA(102, 182, 227, 1))
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =80
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: |-
+            =Set(varDicaTicket,"<p align='left'>Você selecionou a demanda: <br><b>Soluções e Tecnologias</b><br><br><p align='left'><p align='justify'>
+            
+            
+            Identificação de soluções para problemas conhecidos, otimizações de processos existentes, alterações de legislação, adequações de políticas, automatizações de atividades.
+            
+            
+            
+            <p align='justify'>") ; Set(varNavegaDemanda,('03_Solucoes')) ; Set(VarDemanda,"Soluções e Tecnologias")
+        PaddingBottom: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Soluções e Tecnologias"
+        Tooltip: |-
+            ="Esse tipo de demanda se refere a identificação de soluções para problemas conhecidos. Implantação de soluções/tecnologias em processo específico (Ex.: CRM, MES, etc..)"
+        Width: =400
+        X: =280
+        Y: =407
+        ZIndex: =7
+
+    Bttn_IniciaForm_4 As button:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =If(VarDemanda="Orientações",RGBA(166, 166, 166, 1),RGBA(203, 102, 102, 1))
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =80
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: |-
+            =Set(varDicaTicket,"<p align='left'>Você selecionou a demanda: <br><b>Orientações</b><br><br><p align='left'><p align='justify'>Problemas ou situações que demandem de orientações do time de TI das Empresas Randon.<p align='justify'>") ; Set(varNavegaDemanda,('04_Orientacoes')) ; Set(VarDemanda,"Orientações")
+        PaddingBottom: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Orientações"
+        Tooltip: ="Esse tipo de demanda se refere a algum problema ou situação que você não sabe como resolver e precisa de ajuda do time de TI das Empresas Randon."
+        Width: =400
+        X: =280
+        Y: =519
+        ZIndex: =9
+
+    Bttn_IniciaForm_6 As button:
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate(varNavegaDemanda); Set(varReset,true) ; Set(varReset,false) ; Set(varApareceSN,0) ; Set(varResetOutro, true); Set(varResetOutro, false); ResetForm(Anexo_Requisito) ; ResetForm(Anexo_Requisito_2) ; ResetForm(Anexo_BusinessCase) ; Set(VarResetAnexo,true) ; Set(VarResetAnexo,false); Set(VarDicaEmpresas,false)
+        PaddingBottom: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =18
+        Text: ="Continuar"
+        Width: =400
+        X: =835
+        Y: =647
+        ZIndex: =13
+
+    "'Lb_Apresentação Usuário_2' As htmlViewer":
+        AutoHeight: =true
+        Color: =RGBA(29, 49, 64, 1)
+        Font: =Font.Lato
+        Height: =100
+        HtmlText: ="<p align='left'><b>Selecione o tipo de demanda<b><p align='center'>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =23
+        Width: =400
+        X: =280
+        Y: =191
+        ZIndex: =15
+
+    Lb_DescriçãoApp_1 As htmlViewer:
+        Color: =RGBA(22, 38, 50, 1)
+        Font: =Font.'Lato Light'
+        Height: =288
+        HtmlText: =varDicaTicket
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =16
+        Width: =400
+        X: =835
+        Y: =328
+        ZIndex: =17
+
+    "'Lb_Apresentação Usuário_1' As htmlViewer":
+        AutoHeight: =true
+        Color: =RGBA(22, 38, 50, 1)
+        Height: =150
+        HtmlText: ="<p align='left'>Seja bem vindo(a),<b><br>" & User().FullName & "</b></p align='left'>"
+        PaddingLeft: =0
+        Size: =16
+        Width: =400
+        X: =835
+        Y: =185
+        ZIndex: =18
+
+    Img_Profile_1 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Image: =User().Image
+        RadiusBottomLeft: =58585
+        RadiusBottomRight: =58585
+        RadiusTopLeft: =58585
+        RadiusTopRight: =58585
+        X: =835
+        Y: =85
+        ZIndex: =19
+
+    randon_1 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =48
+        Image: |-
+            ="https://www.randon.com.br/media/1317/empresas_randon_transparente.png"
+        Width: =115
+        X: =1235
+        Y: =16
+        ZIndex: =20
+
+    Button2_27 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('00_Inicio')
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =12
+        Text: ="Voltar"
+        Width: =67
+        X: =35
+        Y: =660
+        ZIndex: =21
+

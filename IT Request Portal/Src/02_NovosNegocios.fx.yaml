@@ -1,0 +1,611 @@
+"'02_NovosNegocios' As screen":
+    BackgroundImage: =fundoamarelo
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    Button1_30 As button:
+        BorderColor: =RGBA(116, 116, 116, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(245, 246, 247, 0.51)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 0.52)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =600
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: |
+            =
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16.67
+        Text: =""
+        Width: =559
+        X: =35
+        Y: =100
+        ZIndex: =1
+
+    lb_empresas_2 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        PaddingLeft: =0
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        Text: |-
+            ="Empresas Beneficiadas:"
+        Width: =288.98
+        X: =717
+        Y: =390
+        ZIndex: =12
+
+    lb_area_2 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        PaddingLeft: =0
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        Text: |-
+            ="Tipo de Negócio:"
+        Width: =325.66
+        X: =717
+        Y: =494
+        ZIndex: =13
+
+    Button2_14 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(245, 200, 82, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('02_NovosNegocios_1',ScreenTransition.Fade);Set(VarDicaEmpresas,false)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Avançar"
+        Width: =152
+        X: =1120
+        Y: =660
+        ZIndex: =15
+
+    lb_resumo_8 As htmlViewer:
+        Font: =Font.'Lato Light'
+        Height: =556
+        HtmlText: |-
+            ="<b>Requisitante: </b>" & Inp_RequisitanteNovoNegocio.Selected.DisplayName & 
+            "<br><br><b>Sponsor: </b>" & Inp_SponsorNovoNegocio.Selected.DisplayName &
+            "<br><br><b>Empresas: </b>" & Concat(Inp_EmpresasBeneficiadasNovoNegocio.SelectedItems,Value & ", ") & 
+            "<br><br><b>Tipo de Negócio: </b>" & Concat(Inp_TipodeNegocio.SelectedItems,Value) & If(Inp_TipodeNegocio.Selected.Value="Outro",", " & Inp_OutroTipoNegocio) &
+            "<br><br> <b>Nome do Projeto: </b>" & Inp_NomeProjetoNovoNegocio.Text & 
+            "<br><br><b>Descrição do Projeto: </b><br>" & Inp_DescricaoProjetoNovoNegocio.Text &
+            "<br><br><b>Tipo de Demanda: </b>" & Inp_TipodeDemanda_NovoNegocio.Selected.Value &
+            //"<br><br><b>Anexo:</b> " & If(VarAnexo=0; "Anexo inserido"; "Não há anexos inseridos") &
+            "<br><br><b>Atrelado a Contrato com Prazo? </b>" & If(varApareceSN=1, If(Btn_ContratoNovoNegocio.Value = false,"Não.","<br>Sim, ") &
+            Inp_ContratoNovoNegocio.Text)
+        PaddingBottom: =15
+        PaddingLeft: =15
+        PaddingRight: =15
+        PaddingTop: =15
+        Size: =12.23
+        Width: =559
+        X: =36
+        Y: =144
+        ZIndex: =19
+
+    randon_5 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =48
+        Image: |-
+            ="https://www.randon.com.br/media/1317/empresas_randon_transparente.png"
+        Width: =115
+        X: =1235
+        Y: =16
+        ZIndex: =20
+
+    lb_requisitante_13 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(245, 200, 82, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: ="Informações de Contato"
+        Width: =325
+        X: =670
+        Y: =64
+        ZIndex: =21
+
+    lb_requisitante_12 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: ="Resumo da Requisição de " & VarDemanda
+        Width: =508
+        X: =16
+        Y: =64
+        ZIndex: =22
+
+    Group1_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Inp_RequisitanteNovoNegocio As combobox:
+            BorderColor: =RGBA(179, 179, 179, 1)
+            BorderThickness: =1
+            ChevronBackground: =
+            ChevronDisabledBackground: |
+                =
+            ChevronDisabledFill: |
+                =
+            ChevronFill: =
+            ChevronHoverBackground: =
+            ChevronHoverFill: =
+            Color: =RGBA(22, 38, 50, 1)
+            DefaultSelectedItems: |-
+                =Table({DisplayName:User().FullName,
+                    Claims:"i:0#.f|membership|" & User().Email})
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(204, 204, 204, 1)
+            DisplayFields: =["DisplayName","Mail"]
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            HoverColor: =
+            HoverFill: =RGBA(237, 237, 237, 1)
+            InputTextPlaceholder: ="Digite para pesquisar o requisitante"
+            Items: |-
+                =UsuáriosdoOffice365.SearchUser({searchTerm:Inp_RequisitanteNovoNegocio.SearchText})
+            NoSelectionText: ="Digite para pesquisar o requisitante"
+            PressedColor: =RGBA(0, 94, 146, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =varReset
+            SearchFields: =["DisplayName"]
+            SearchItems: |-
+                =Search(UsuáriosdoOffice365.SearchUser({searchTerm:Inp_RequisitanteNovoNegocio.SearchText}),Inp_RequisitanteNovoNegocio.SearchText,"DisplayName")
+            SelectionColor: =RGBA(179, 179, 179, 1)
+            SelectionFill: =
+            SelectMultiple: =false
+            Size: =12
+            Template: =ListItemTemplate.Person
+            Width: =500
+            X: =717
+            Y: =218
+            ZIndex: =6
+
+        lb_requisitante_14 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(22, 38, 50, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Bold
+            PaddingLeft: =0
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            Text: |-
+                ="Requisitante:"
+            Width: =166.72
+            X: =717
+            Y: =178
+            ZIndex: =9
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Inp_SponsorNovoNegocio As combobox:
+            BorderColor: =RGBA(179, 179, 179, 1)
+            BorderThickness: =1
+            ChevronBackground: =
+            ChevronDisabledBackground: |
+                =
+            ChevronDisabledFill: |
+                =
+            ChevronFill: =
+            ChevronHoverBackground: =
+            ChevronHoverFill: =
+            Color: =RGBA(22, 38, 50, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(204, 204, 204, 1)
+            DisplayFields: =["DisplayName","Mail"]
+            FocusedBorderThickness: =0
+            Font: =Font.Lato
+            HoverColor: =
+            HoverFill: =RGBA(237, 237, 237, 1)
+            InputTextPlaceholder: ="Digite para pesquisar o sponsor ou gestor"
+            Items: |-
+                =UsuáriosdoOffice365.SearchUser({searchTerm:Inp_SponsorNovoNegocio.SearchText})
+            NoSelectionText: ="Digite para pesquisar o sponsor ou gestor"
+            PressedColor: =RGBA(0, 94, 146, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Reset: =varReset
+            SearchFields: =["DisplayName"]
+            SearchItems: |-
+                =Search(UsuáriosdoOffice365.SearchUser({searchTerm:Inp_SponsorNovoNegocio.SearchText}),Inp_SponsorNovoNegocio.SearchText,"DisplayName")
+            SelectionColor: =RGBA(179, 179, 179, 1)
+            SelectionFill: =
+            SelectMultiple: =false
+            Size: =12
+            Template: =ListItemTemplate.Person
+            Width: =500
+            X: =717
+            Y: =328
+            ZIndex: =7
+
+        lb_sponsor_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(22, 38, 50, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Bold
+            PaddingLeft: =0
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            Text: |-
+                ="Sponsor/gestor:"
+            Width: =166.72
+            X: =715
+            Y: =288
+            ZIndex: =10
+
+    Group6_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_37 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(128, 128, 128, 1)
+            DisabledFill: =RGBA(128, 128, 128, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(116, 116, 116, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =918
+            Y: =685
+            ZIndex: =16
+
+        Button1_38 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =961
+            Y: =685
+            ZIndex: =17
+
+        Button1_39 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =1001
+            Y: =685
+            ZIndex: =18
+
+    Inp_EmpresasBeneficiadasNovoNegocio As combobox:
+        BorderColor: =RGBA(179, 179, 179, 1)
+        BorderThickness: =1
+        ChevronBackground: =
+        ChevronDisabledBackground: |
+            =
+        ChevronDisabledFill: |
+            =
+        ChevronFill: =
+        ChevronHoverBackground: =
+        ChevronHoverFill: =
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(204, 204, 204, 1)
+        DisplayFields: =["Value","Mail"]
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        HoverColor: =
+        HoverFill: =RGBA(237, 237, 237, 1)
+        InputTextPlaceholder: ="Digite para pesquisar as empresas beneficiadas"
+        Items: =Choices('Demandas TI'.Empresas)
+        NoSelectionText: ="Digite para pesquisar as empresas beneficiadas"
+        PressedColor: =RGBA(0, 94, 146, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =varReset
+        SearchFields: =["Value"]
+        SearchItems: =Choices('Demandas TI'.Empresas,Inp_EmpresasBeneficiadasNovoNegocio.SearchText)
+        SelectionColor: =RGBA(179, 179, 179, 1)
+        SelectionFill: =
+        Size: =12
+        Width: =497
+        X: =717
+        Y: =430
+        ZIndex: =25
+
+    Inp_TipodeNegocio As combobox:
+        BorderColor: =RGBA(179, 179, 179, 1)
+        BorderThickness: =1
+        ChevronBackground: =
+        ChevronDisabledBackground: |
+            =
+        ChevronDisabledFill: |
+            =
+        ChevronFill: =
+        ChevronHoverBackground: =
+        ChevronHoverFill: =
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(204, 204, 204, 1)
+        DisplayFields: =["Value","Mail"]
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        HoverColor: =
+        HoverFill: =RGBA(237, 237, 237, 1)
+        InputTextPlaceholder: ="Digite para pesquisar o Tipo de Negócio"
+        IsSearchable: =false
+        Items: =Choices('Demandas TI'.TipoDeNegocio)
+        NoSelectionText: ="Digite para pesquisar o tipo de negócio"
+        OnChange: =Set(varResetOutro, true); Set(varResetOutro, false)
+        PressedColor: =RGBA(0, 94, 146, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =varReset
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(179, 179, 179, 1)
+        SelectionFill: =
+        SelectMultiple: =false
+        Size: =12
+        Width: =497
+        X: =717
+        Y: =540
+        ZIndex: =26
+
+    Button2_17 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(90, 106, 119, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(230, 230, 230, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: |-
+            =Navigate('01_SelecionaDemanda');
+            Set(varReset,true);
+            Set(varReset,false);
+            Set(varNavegaDemanda,('01_SelecionaDemanda'));
+            Set(VarDemanda," ");
+            Set(varDicaTicket,"<p align='justify'>Este é o aplicativo para entrada de demanda da <b>TI das Empresas Randon</b>. Aqui você pode facilmente abrir uma nova solicitação seguindo o formulario mais adequado a sua necessidade.<p align='justify'>")
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Cancelar Requisição"
+        Width: =100
+        X: =16
+        Y: =660
+        ZIndex: =29
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =29
+
+        Inp_OutroTipoNegocio As text:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =1
+            Font: =Font.'Lato Light'
+            HintText: ="Informe o tipo de Negócio"
+            HoverBorderColor: =RGBA(32, 54, 71, 1)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            Mode: =TextMode.MultiLine
+            PaddingLeft: =10
+            PaddingRight: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Reset: =varResetOutro
+            Visible: =If(Inp_TipodeNegocio.Selected.Value="Outro",true,false)
+            Width: =456
+            X: =758
+            Y: =592
+            ZIndex: =27
+
+        Icon2 As icon.ArrowRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =40
+            Icon: =Icon.ArrowRight
+            PaddingRight: =10
+            Visible: =If(Inp_TipodeNegocio.Selected.Value="Outro",true,false)
+            Width: =41
+            X: =717
+            Y: =592
+            ZIndex: =28
+
+    Icon1 As icon.Help:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =30
+        Icon: =Icon.Help
+        OnSelect: =Set(VarDicaEmpresas,true)
+        Width: =30
+        X: =1232
+        Y: =435
+        ZIndex: =30
+
+    DicaEmpresasBeneficiadas As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =34
+
+        HtmlText1 As htmlViewer:
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =460
+            HtmlText: |-
+                ="<center>Aqui você pode selecionar as empresas beneficiadas de quatro formas diferentes:" &
+                
+                "<br><br><b>Todas as empresas: </b> se você selecionar essa opção, sua demanda beneficia todas empresas do grupo Randon." &
+                "<br><br><b>Por divisão: </b> se você selecionar essa opção, sua demanda beneficia todas empresas que fazem parte de uma divisão específica sendo elas relacionadas abaixo." &
+                
+                "
+                    <li>Divisão Montadoras</li>
+                    <li>Divisão Autopeças CV</li>
+                    <li>Divisão Controle de Movimentos CV & LV</li>
+                    <li>Divisão Serviços Financeiros e Digitais</li>
+                    <li>Tecnologia Avançada e HQ</li>
+                
+                " &
+                
+                "<br><b>Por empresa ou empresas: </b> se a sua demanda beneficia apenas uma ou algumas empresas específicas, você pode selecionar elas de acordo com a sua necessidade." &
+                
+                "<br><br><b>Outros: </b>  caso a sua demanda não seja referente a nenhuma das opções acima, você pode selecionar a opção outros e após detalhar melhor durante a descrição da demanda." 
+            Visible: =VarDicaEmpresas
+            Width: =502
+            X: =715
+            Y: =178
+            ZIndex: =32
+
+        Icon3 As icon.CancelBadge:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =30
+            Icon: =Icon.CancelBadge
+            OnSelect: =Set(VarDicaEmpresas,false)
+            Visible: =VarDicaEmpresas
+            Width: =30
+            X: =1187
+            Y: =141
+            ZIndex: =33
+

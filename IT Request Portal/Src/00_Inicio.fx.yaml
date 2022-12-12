@@ -1,0 +1,111 @@
+"'00_Inicio' As screen":
+    BackgroundImage: ='Inicio App TI'
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    "'Lb_Apresentação Usuário' As htmlViewer":
+        AutoHeight: =true
+        Color: =RGBA(22, 38, 50, 1)
+        Height: =150
+        HtmlText: ="<p align='left'>Seja bem vindo(a),<b><br>" & User().FullName & "</b></p align='left'>"
+        PaddingLeft: =0
+        Size: =16
+        Width: =400
+        X: =100
+        Y: =192
+        ZIndex: =3
+
+    Img_Profile As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Image: =User().Image
+        RadiusBottomLeft: =58585
+        RadiusBottomRight: =58585
+        RadiusTopLeft: =58585
+        RadiusTopRight: =58585
+        X: =100
+        Y: =100
+        ZIndex: =4
+
+    Bttn_IniciaForm As button:
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('01_SelecionaDemanda',ScreenTransition.Fade) ; Set(varDicaTicket,"<p align='justify'>Este é o aplicativo para entrada de demanda da <b>TI das Empresas Randon</b>. Aqui você pode facilmente abrir uma nova solicitação seguindo o formulario mais adequado a sua necessidade.<p align='justify'>"); Set(VarDemanda,"")
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Iniciar nova solicitação"
+        Width: =400
+        X: =100
+        Y: =544
+        ZIndex: =6
+
+    Lb_DescriçãoApp_8 As htmlViewer:
+        AutoHeight: =true
+        Color: =RGBA(22, 38, 50, 1)
+        Font: =Font.'Lato Light'
+        Height: =247
+        HtmlText: ="<p align='justify'>O aplicativo de <b>Entrada de Demandas - TI</b> surgiu para facilitar o acompanhamento e organização de novas demandas das Empresas Randon relacionadas a Tecnologia da Informação.<br><br>Utilize este canal para criar solicitações de Novos Negócios, Melhorias e Orientações.<p align='justify'>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =16
+        Width: =400
+        X: =100
+        Y: =279
+        ZIndex: =10
+
+    randon_2 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =48
+        Image: |-
+            ="https://www.randon.com.br/media/1317/empresas_randon_transparente.png"
+        Width: =115
+        X: =1235
+        Y: =16
+        ZIndex: =11
+
+    Bttn_IniciaForm_7 As button:
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(102, 182, 227, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('01_ConsultaDemanda')
+        PaddingBottom: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Consulte suas requisições"
+        Tooltip: ="Consulte suas requisições"
+        Width: =400
+        X: =100
+        Y: =631
+        ZIndex: =12
+

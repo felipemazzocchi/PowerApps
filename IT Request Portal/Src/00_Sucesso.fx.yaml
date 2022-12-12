@@ -1,0 +1,63 @@
+"'00_Sucesso' As screen.'tabletLayout_Success_ver3.0'":
+    BackgroundImage: ='Sucesso App TI'
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    Bttn_IniciaForm_5 As button:
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(221, 79, 14, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =80
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('00_Inicio',ScreenTransition.Fade) ; Set(varDicaTicket,"<p align='justify'>Este é o aplicativo para entrada de demanda da <b>TI das Empresas Randon</b>. Aqui você pode facilmente abrir uma nova solicitação seguindo o formulario mais adequado a sua necessidade.<p align='justify'>")
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Voltar para a página inicial"
+        Width: =436
+        X: =786
+        Y: =602
+        ZIndex: =4
+
+    lb_requisitante_20 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(102, 182, 227, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: ="Demanda cadastrada com sucesso!"
+        Width: =454
+        X: =672
+        Y: =150
+        ZIndex: =6
+
+    Lb_DescriçãoApp_9 As htmlViewer:
+        Color: =RGBA(22, 38, 50, 1)
+        Font: =Font.'Lato Light'
+        Height: =322
+        HtmlText: ="<p align='justify'><b>Tudo certo, " & User().FullName & "!</b><br><br>Nosso time responsável já recebeu a sua demanda e em breve ela será analisada. <br><br>Você também receberá um e-mail com os detalhes da sua solicitação e qualquer comunicação necessária pelo nosso time será feita pelo seu e-mail ou Teams.<p align='justify'>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =16
+        Width: =436
+        X: =786
+        Y: =271
+        ZIndex: =7
+

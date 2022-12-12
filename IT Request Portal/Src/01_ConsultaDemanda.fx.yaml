@@ -1,0 +1,1843 @@
+"'01_ConsultaDemanda' As screen":
+    BackgroundImage: =consultatickaberto
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    Width: =
+
+    Button1_67 As button:
+        BorderColor: =RGBA(116, 116, 116, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(245, 246, 247, 0.51)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 0.5)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =556
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: |
+            =
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16.67
+        Text: =""
+        Width: =244
+        X: =1097
+        Y: =144
+        ZIndex: =1
+
+    randon_10 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =48
+        Image: |-
+            ="https://www.randon.com.br/media/1317/empresas_randon_transparente.png"
+        Width: =115
+        X: =1235
+        Y: =16
+        ZIndex: =7
+
+    lb_requisitante_27 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =92
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =20
+        PaddingTop: =0
+        Size: =19
+        Text: |-
+            ="Detalhes da Requisição " & " #" & VarID & "
+            " & LookUp('Demandas TI',ID=VarID,NomeDoProjeto)
+        Width: =448
+        Wrap: =false
+        X: =533
+        Y: =80
+        ZIndex: =8
+
+    Inp_TipodeDemanda As combobox:
+        BorderColor: =RGBA(179, 179, 179, 1)
+        BorderThickness: =1
+        ChevronBackground: =
+        ChevronDisabledBackground: |
+            =
+        ChevronDisabledFill: |
+            =
+        ChevronFill: =
+        ChevronHoverBackground: =
+        ChevronHoverFill: =
+        Color: =RGBA(22, 38, 50, 1)
+        DefaultSelectedItems: =["Todas as Categorias"]
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(204, 204, 204, 1)
+        DisplayFields: =["Value"]
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =30
+        HoverColor: =
+        HoverFill: =RGBA(237, 237, 237, 1)
+        InputTextPlaceholder: ="Selecione o Tipo de Demanda"
+        IsSearchable: =false
+        Items: =["Todas as Categorias","Novos Negócios","Soluções e Tecnologias","Orientações"]
+        NoSelectionText: ="Selecione o Tipo de Demanda"
+        PressedColor: =RGBA(0, 94, 146, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =varReset
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(179, 179, 179, 1)
+        SelectionFill: =
+        SelectMultiple: =false
+        Size: =10
+        Width: =220
+        X: =242
+        Y: =184
+        ZIndex: =9
+
+    Inp_Status As combobox:
+        BorderColor: =RGBA(179, 179, 179, 1)
+        BorderThickness: =1
+        ChevronBackground: =
+        ChevronDisabledBackground: |
+            =
+        ChevronDisabledFill: |
+            =
+        ChevronFill: =
+        ChevronHoverBackground: =
+        ChevronHoverFill: =
+        Color: =RGBA(22, 38, 50, 1)
+        DefaultSelectedItems: =["Todos os Status"]
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(204, 204, 204, 1)
+        DisplayFields: =["Value"]
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =30
+        HoverColor: =
+        HoverFill: =RGBA(237, 237, 237, 1)
+        InputTextPlaceholder: ="Selecione o Tipo de Demanda"
+        IsSearchable: =false
+        Items: =["Todos os Status","Aberto","Concluído","Cancelado"]
+        NoSelectionText: ="Aberto"
+        PressedColor: =RGBA(0, 94, 146, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(179, 179, 179, 1)
+        SelectionFill: =
+        SelectMultiple: =false
+        Size: =10
+        Width: =180
+        X: =50
+        Y: =225
+        ZIndex: =10
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Height: =379
+        Items: |-
+            =SortByColumns(Filter('Demandas TI', 
+            If(User().FullName="Adriano Dalbosco Da Luz",Criado<Today(),If(User().FullName="Noele Cristiane Calgaro",Criado<Today(),If(Inp_Requisicoes.Selected.Value="Minhas Requisições",Or(Requisitante= User().FullName, 'Criado por'.DisplayName= User().FullName),Or(Requisitante= User().FullName, 'Criado por'.DisplayName= User().FullName, Sponsor= User().FullName)))),
+            
+            If(Inp_Status.Selected.Value="Todos os Status",Or(Status="Aberto",Status="Cancelada",Status="Cancelado",Status="AvaliacaoBacklogAzure",Status="AvaliacaoExecucao",Status="BacklogAzure",Status="AzureEstudo",Status="AzureExecucao",Status="CalculadoraExecucao",Status="BacklogExecucao",Status="Concluído"),
+            If(Inp_Status.Selected.Value="Aberto",Or(Status="Aberto",Status="AvaliacaoBacklogAzure",Status="AvaliacaoExecucao",Status="BacklogAzure",Status="BacklogExecucao",Status="AzureEstudo",Status="CalculadoraExecucao",Status="AzureExecucao"),If(Inp_Status.Selected.Value="Cancelado",Or(Status="Cancelada",Status="Cancelado"),Status="Concluído"))),
+            
+            Find(Lower(NomedaDemand.Text) , Lower(NomeDoProjeto)),
+            
+            If(Inp_TipodeDemanda.Selected.Value="Todas as Categorias",Or(Title="Novos Negócios",Title="Soluções e Tecnologias",Title="Orientações"),Title=Inp_TipodeDemanda.Selected.Value)),
+            
+            "ID",Descending)
+        Layout: =Layout.Vertical
+        OnSelect: =Set(VarID,ThisItem.ID) ; Set(varTipoDemanda,ThisItem.Title)
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =76
+        Width: =439
+        X: =50
+        Y: =274
+        ZIndex: =11
+
+        Subtitle2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =11
+            Text: |-
+                ="#" & ThisItem.ID & " - " & If(ThisItem.Title="Orientações","Orientações - " & Concat(ThisItem.AreaAbertura,Value,", "),ThisItem.NomeDoProjeto)
+            Width: =396
+            Wrap: =false
+            X: =5
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =76
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =37
+            X: =401
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(32, 54, 71, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =75
+            ZIndex: =5
+
+        Subtitle2_3 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: |-
+                ="Reponsável TI: " & First( Split( First( Split( ThisItem.ResponsavelAzure, "<" ) ).Result, ">" ) ).Result
+            Width: =218
+            Wrap: =false
+            X: =183
+            Y: =20
+            ZIndex: =8
+
+        Subtitle2_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: |-
+                ="Descrição: " & ThisItem.Descrição
+            VerticalAlign: =VerticalAlign.Top
+            Width: =384
+            X: =5
+            Y: =41
+            ZIndex: =9
+
+        Label3 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =20
+            OnSelect: =Select(Parent)
+            PaddingLeft: =0
+            Size: =9
+            Text: |-
+                ="Tipo: " & ThisItem.Title
+            Width: =230
+            X: =5
+            Y: =20
+            ZIndex: =10
+
+    lb_requisitante_26 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =92
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =19
+        Text: |-
+            ="Suas Requisições de
+            " & Inp_TipodeDemanda.Selected.Value
+        Width: =319
+        X: =35
+        Y: =82
+        ZIndex: =12
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Button1_31 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(245, 246, 247, 0.51)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(255, 255, 255, 0.5)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =487
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =16.67
+            Text: =""
+            Width: =474
+            X: =588
+            Y: =144
+            ZIndex: =5
+
+        lb_resumo_11 As htmlViewer:
+            Font: =Font.'Lato Light'
+            Height: =460
+            HtmlText: |-
+                =If(varTipoDemanda="Novos Negócios", 
+                
+                "<b>Aberto por: </b>" & LookUp('Demandas TI', ID=VarID,'Criado por'.DisplayName) &
+                "<br><br><b>Aberto em: </b>" & Text(LookUp('Demandas TI', ID=VarID,Criado)) &
+                "<br><br><b>Tipo de Demanda: </b>" & LookUp('Demandas TI', ID=VarID,Title) &
+                "<br><br><b>Requisitante: </b>" & LookUp('Demandas TI', ID=VarID,Requisitante) & 
+                "<br><br><b>Sponsor: </b>" & LookUp('Demandas TI', ID=VarID,Sponsor) &
+                "<br><br><b>Empresas: </b>" & Concat(LookUp('Demandas TI', ID=VarID,Empresas),Value,", ") & 
+                "<br><br><b>Tipo de Negócio: </b>" & Concat(LookUp('Demandas TI', ID=VarID,TipoDeNegocio),Value,", ") &
+                "<br><br> <b>Nome do Projeto: </b>" & LookUp('Demandas TI', ID=VarID,NomeDoProjeto) & 
+                "<br><br><b>Descrição do Projeto: </b><br>" & LookUp('Demandas TI', ID=VarID,Descrição) &
+                "<br><br><b>Tipo de Demanda: </b>" & Concat(LookUp('Demandas TI', ID=VarID,TipoDemanda),Value,", ") &
+                "<br><br><b>Atrelado a Contrato com Prazo? </b>" & If(LookUp('Demandas TI', ID=VarID,DemandaContratoPrazo) = false,"Não.","<br>Sim, ") & LookUp('Demandas TI', ID=VarID,DescricaoContrato) &
+                "<br><b>Responsável da TI: </b>" & LookUp('Demandas TI', ID=VarID,ResponsavelAzure), 
+                
+                If(varTipoDemanda="Soluções e Tecnologias", 
+                "<br> <b>Nome da Demanda: </b>" & LookUp('Demandas TI', ID=VarID,NomeDoProjeto) &
+                "<br><br><b>Aberto por: </b>" & LookUp('Demandas TI', ID=VarID,'Criado por'.DisplayName) &
+                "<br><br><b>Aberto em: </b>" & Text(LookUp('Demandas TI', ID=VarID,Criado)) &
+                "<br><br><b>Tipo de Demanda: </b>" & LookUp('Demandas TI', ID=VarID,Title) &
+                "<br><br><b>Requisitante: </b>" & LookUp('Demandas TI', ID=VarID,Requisitante) &
+                "<br><br><b>Sponsor: </b>" & LookUp('Demandas TI', ID=VarID,Sponsor) &
+                "<br><br><b>Empresas: </b>" & Concat(LookUp('Demandas TI', ID=VarID,Empresas),Value,", ") & 
+                "<br><br><b>Áreas Beneficiadas: </b>" & Concat(LookUp('Demandas TI', ID=VarID,AreaAbertura),Value,", ") &
+                "<br><br><b>Descrição: </b><br>" & LookUp('Demandas TI', ID=VarID,Descrição) &
+                "<br><br><b>Ganhos com a Solução: </b>" & LookUp('Demandas TI', ID=VarID,Ganhos) &
+                "<br><br><b>Demanda é um Projeto Estratégico? </b>" & If(LookUp('Demandas TI', ID=VarID,Estrategia) = false,"Não.","<br>Sim, ") & LookUp('Demandas TI', ID=VarID,EstrategiaDetalhes) &
+                "<br><br><b>Requisito Legal com prazo, Auditoria ou Segurança da Informação? </b>" & If(LookUp('Demandas TI', ID=VarID,Requisito) = false,"Não.","<br>Sim, ") & LookUp('Demandas TI', ID=VarID,RequisitoDetalhes) &
+                "<br><br><b>Responsável da TI: </b>" & LookUp('Demandas TI', ID=VarID,ResponsavelAzure), 
+                
+                If(varTipoDemanda="Orientações",
+                "<b>Aberto por: </b>" & LookUp('Demandas TI', ID=VarID,'Criado por'.DisplayName) &
+                "<br><br><b>Aberto em: </b>" & Text(LookUp('Demandas TI', ID=VarID,Criado)) &
+                "<br><br><b>Tipo de Demanda: </b>" & LookUp('Demandas TI', ID=VarID,Title) &
+                "<br><br><b>Status: </b>" & LookUp('Demandas TI', ID=VarID,Status) &
+                "<br><br><b>Requisitante: </b>" & LookUp('Demandas TI', ID=VarID,Requisitante) & 
+                "<br><br><b>Empresas: </b>" & Concat(LookUp('Demandas TI', ID=VarID,Empresas),Value,", ") & 
+                "<br><br><b>Áreas Envolvidas: </b>" & Concat(LookUp('Demandas TI', ID=VarID,AreaAbertura),Value,", ") &
+                "<br><br><b>Descrição da Demanda: </b><br>" & LookUp('Demandas TI', ID=VarID,Descrição) &
+                
+                If(LookUp('Demandas TI', ID=VarID,Status)="Concluído",
+                "<br><br><b>Atendido por: </b>" & LookUp('Demandas TI', ID=VarID,NomeAvaliador) &
+                "<br><br><b>Concluído em: </b>" & Text(LookUp('Demandas TI', ID=VarID,Concluído)) &
+                "<br><br><b>Orientação: </b>" & LookUp('Demandas TI', ID=VarID,ComentarioAvaliador)) 
+                
+                )))
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =15
+            Size: =10
+            Width: =474
+            X: =588
+            Y: =171
+            ZIndex: =6
+
+    lb_requisitante_28 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(22, 38, 50, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =92
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =19
+        Text: ="Status da Demanda"
+        Width: =216
+        X: =1084
+        Y: =83
+        ZIndex: =13
+
+    Button2_29 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(127, 178, 57, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =60
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Refresh('Demandas TI')
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Atualizar Lista"
+        Width: =88
+        X: =400
+        Y: =660
+        ZIndex: =14
+
+    Button2_21 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(166, 166, 166, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Back(ScreenTransition.Fade)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =12
+        Text: ="Voltar"
+        Width: =67
+        X: =35
+        Y: =660
+        ZIndex: =15
+
+    NomedaDemand As text:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =Font.'Lato Light'
+        Height: =30
+        HintText: ="Buscar por Nome da Demanda"
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =TextMode.MultiLine
+        PaddingLeft: =10
+        PaddingRight: =10
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Reset: =varReset
+        Size: =10
+        Width: =220
+        X: =242
+        Y: =225
+        ZIndex: =21
+
+    Inp_Requisicoes As combobox:
+        BorderColor: =RGBA(179, 179, 179, 1)
+        BorderThickness: =1
+        ChevronBackground: =
+        ChevronDisabledBackground: |
+            =
+        ChevronDisabledFill: |
+            =
+        ChevronFill: =
+        ChevronHoverBackground: =
+        ChevronHoverFill: =
+        Color: =RGBA(22, 38, 50, 1)
+        DefaultSelectedItems: =["Minhas Requisições"]
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(204, 204, 204, 1)
+        DisplayFields: =["Value"]
+        FocusedBorderThickness: =0
+        Font: =Font.Lato
+        Height: =30
+        HoverColor: =
+        HoverFill: =RGBA(237, 237, 237, 1)
+        InputTextPlaceholder: ="Selecione o Tipo de Demanda"
+        IsSearchable: =false
+        Items: =["Minhas Requisições","Todas Requisições"]
+        NoSelectionText: ="Aberto"
+        PressedColor: =RGBA(0, 94, 146, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Reset: =
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionColor: =RGBA(179, 179, 179, 1)
+        SelectionFill: =
+        SelectMultiple: =false
+        Size: =10
+        Width: =180
+        X: =50
+        Y: =184
+        ZIndex: =22
+
+    Button1_33 As button:
+        BorderColor: =RGBA(116, 116, 116, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(245, 246, 247, 0.51)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 0.5)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =69
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: |
+            =
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16.67
+        Text: =""
+        Width: =474
+        X: =588
+        Y: =631
+        ZIndex: =23
+
+    FormViewer1 As formViewer:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DataSource: ='Demandas TI'
+        Height: =68
+        Item: =LookUp('Demandas TI', ID=VarID)
+        NumberOfColumns: =2
+        Width: =452
+        X: =599
+        Y: =634
+        ZIndex: =24
+
+        Anexos_DataCard2 As typedDataCard.attachmentsViewCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Demandas TI'],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =62
+            Required: =false
+            Update: =DataCardValue62.Attachments
+            Width: =452
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey62 As label:
+                AutoHeight: =true
+                Color: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =34
+                Size: =10
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue62 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisabledFill: =RGBA(244, 244, 244, 1)
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =68
+                HoverColor: =RGBA(0, 0, 0, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                IsInDataCard: =true
+                ItemColor: =RGBA(255, 255, 255, 1)
+                ItemFill: =RGBA(100, 118, 132, 1)
+                ItemHoverColor: =RGBA(0, 0, 0, 1)
+                ItemHoverFill: =RGBA(205, 209, 213, 1)
+                Items: =Parent.Default
+                NoAttachmentsText: ="Não há nada em anexo."
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                Size: =8
+                Width: =400
+                ZIndex: =2
+
+            ErrorMessage10 As label:
+                AutoHeight: =true
+                Color: =RGBA(168, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                Y: =68
+                ZIndex: =3
+
+            StarVisible10 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =DataCardKey62.Height
+                Size: =13
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey62.Y
+                ZIndex: =4
+
+    CancelaDemanda As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 0.6)
+        Height: =768
+        Visible: =ContainerCancelaDemanda
+        Width: =1366
+        ZIndex: =25
+
+        Image2 As image:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =768
+            Image: =cancelademanda
+            Width: =1366
+            ZIndex: =1
+
+        Button2 As button:
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(102, 182, 227, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =63
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =Set(ContainerCancelaDemanda,false)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="Voltar"
+            X: =603
+            Y: =602
+            ZIndex: =2
+
+        Label5 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =81
+            Size: =19
+            Text: |-
+                ="Você realmente deseja cancelar a demanda " & " 
+                #" & VarID & " - " & LookUp('Demandas TI',ID=VarID,NomeDoProjeto)
+            Width: =628
+            Wrap: =false
+            X: =369
+            Y: =423
+            ZIndex: =3
+
+        Button2_1 As button:
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Fill: =RGBA(203, 102, 102, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =74
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: |-
+                =Patch('Demandas TI',
+                {
+                ID:VarID
+                },{
+                Status:"Cancelada"});
+                
+                Set(ContainerCancelaDemanda,false)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: |-
+                ="Confirmar Cancelamento 
+                da Requisição"
+            Width: =381
+            X: =493
+            Y: =516
+            ZIndex: =4
+
+    Status_2 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =31
+
+        Button1_10 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(LookUp('Demandas TI', ID=VarID,Status)="Cancelado",LookUp('Demandas TI', ID=VarID,Status)="Cancelada"),true,If(And(varTipoDemanda="Orientações",LookUp('Demandas TI', ID=VarID,Status)="Concluído"),true,
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone"),true,
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            Width: =10
+            X: =1113
+            Y: =232
+            ZIndex: =2
+
+        Button1_11 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(LookUp('Demandas TI', ID=VarID,Status)="Cancelado",LookUp('Demandas TI', ID=VarID,Status)="Cancelada"),true,If(And(varTipoDemanda="Orientações",LookUp('Demandas TI', ID=VarID,Status)="Concluído"),true,
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone"),true,
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            Width: =2
+            X: =1117
+            Y: =199
+            ZIndex: =3
+
+        Label4_4 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(Or(LookUp('Demandas TI', ID=VarID,Status)="Cancelado",LookUp('Demandas TI', ID=VarID,Status)="Cancelada"),"Demanda cancelada",If(varTipoDemanda="Orientações","Solicitação de orientação finalizada",If(varTipoDemanda="Novos Negócios","Aguardando atendimento pela área de Arquitetura","Aguardando atendimento pela área de " & LookUp('Demandas TI',ID=VarID,Concat(AreaPath,Value)))))
+            Visible: |-
+                =If(Or(LookUp('Demandas TI', ID=VarID,Status)="Cancelado",LookUp('Demandas TI', ID=VarID,Status)="Cancelada"),true,If(And(varTipoDemanda="Orientações",LookUp('Demandas TI', ID=VarID,Status)="Concluído"),true,
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone"),true,
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            X: =1134
+            Y: =208
+            ZIndex: =4
+
+    Status_13 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =34
+
+        Button1_12 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            Width: =10
+            X: =1113
+            Y: =674
+            ZIndex: =18
+
+        Button1_24 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            Width: =2
+            X: =1117
+            Y: =639
+            ZIndex: =19
+
+        Label4_5 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: ="Demanda concluída"
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))))
+            X: =1134
+            Y: =654
+            ZIndex: =20
+
+    Status_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        Button1_2 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Width: =15
+            X: =1111
+            Y: =190
+            ZIndex: =16
+
+        Label4_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =33
+            Size: =8
+            Text: =If(varTipoDemanda="Orientações","Solicitação de orientação criada","Demanda criada")
+            X: =1134
+            Y: =181
+            ZIndex: =17
+
+    Status_3 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =40
+
+        Button1_26 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =272
+            ZIndex: =26
+
+        Button1_27 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =239
+            ZIndex: =27
+
+        Label4_6 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),"Atendimento priorizado pela área "& LookUp('Demandas TI',ID=VarID,Concat(AreaPath,Value)),If(varTipoDemanda="Novos Negócios","Estudo priorizado pela área de Arquitetura","Estudo priorizado pela área " & LookUp('Demandas TI',ID=VarID,Concat(AreaPath,Value))))
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =248
+            ZIndex: =28
+
+    Status_4 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =43
+
+        Button1_32 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =312
+            ZIndex: =29
+
+        Button1_35 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =279
+            ZIndex: =30
+
+        Label4_7 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Levantamento de requisitos","Demanda em estudo")
+            Visible: |-
+                =If(Or(varTipoDemanda="Soluções e Tecnologias",varTipoDemanda="Novos Negócios"),
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =288
+            ZIndex: =31
+
+    Status_5 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =46
+
+        Button1_42 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =352
+            ZIndex: =32
+
+        Button1_43 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =319
+            ZIndex: =33
+
+        Label4_8 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),"Demanda em execução","Demanda em estudo"),If(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Estimativa","Estimativa entregue","Aguardando aprovação"))
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =328
+            ZIndex: =34
+
+    Status_6 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =49
+
+        Button1_44 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =392
+            ZIndex: =35
+
+        Button1_54 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =359
+            ZIndex: =36
+
+        Label4_9 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),"Demanda em finalização","Aguardando aprovação"),If(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Estimativa","Estimativa finalizada","Estudo finalizado e " & LookUp('Demandas TI',ID=VarID,StatusEstudo)))
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(varTipoDemanda="Novos Negócios",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =368
+            ZIndex: =37
+
+    Status_7 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =52
+
+        Button1_55 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =432
+            ZIndex: =38
+
+        Button1_56 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =399
+            ZIndex: =39
+
+        Label4_10 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),"Demanda concluída","Estudo finalizado e " & LookUp('Demandas TI',ID=VarID,StatusEstudo)),"Aguardando atendimento pela área de PMO")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                
+                //se é execução direto
+                
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),
+                
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false),
+                
+                //se é estudo
+                If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="StudyDone",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =408
+            ZIndex: =40
+
+    Status_8 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =55
+
+        Button1_57 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =472
+            ZIndex: =41
+
+        Button1_58 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =439
+            ZIndex: =42
+
+        Label4_11 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Aguardando atendimento pela área "  & LookUp('Demandas TI',ID=VarID,Concat(AreaPath,Value)),"Atendimento priorizado pela área de PMO")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionBacklog",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =448
+            ZIndex: =43
+
+    "'btn Cancela demanda' As button":
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(203, 102, 102, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =60
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Set(ContainerCancelaDemanda,true)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Cancelar Demanda"
+        Visible: =LookUp('Demandas TI', ID=VarID,If(Status="Aberto",true,false))
+        Width: =90
+        X: =991
+        Y: =660
+        ZIndex: =56
+
+    Status_12 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =56
+
+        Button1_65 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =633
+            ZIndex: =53
+
+        Button1_66 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =600
+            ZIndex: =54
+
+        Label4_15 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            OnSelect: =
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Demanda em finalização","Demanda concluída")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =609
+            ZIndex: =55
+
+    Status_9 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =58
+
+        Button1_59 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =512
+            ZIndex: =44
+
+        Button1_60 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =479
+            ZIndex: =45
+
+        Label4_12 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Atendimento priorizado pela área "  & LookUp('Demandas TI',ID=VarID,Concat(AreaPath,Value)),"Levantamento de requisitos")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPrioritized",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =488
+            ZIndex: =46
+
+    Status_10 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =61
+
+        Button1_61 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =552
+            ZIndex: =47
+
+        Button1_62 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =519
+            ZIndex: =48
+
+        Label4_13 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Levantamento de requisitos","Demanda em execução")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionPlanning",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =528
+            ZIndex: =49
+
+    Status_11 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =64
+
+        Button1_63 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =10
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =10
+            X: =1113
+            Y: =592
+            ZIndex: =50
+
+        Button1_64 As button:
+            BorderThickness: =0
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(100, 118, 132, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(100, 118, 132, 1)
+            FontWeight: =FontWeight.Semibold
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =""
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            Width: =2
+            X: =1117
+            Y: =559
+            ZIndex: =51
+
+        Label4_14 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =58
+            OnSelect: =
+            Size: =8
+            Text: =If(varTipoDemanda="Soluções e Tecnologias","Demanda em execução","Demanda em finalização")
+            Visible: |-
+                =If(varTipoDemanda="Soluções e Tecnologias",
+                If(And(LookUp('Demandas TI',ID=VarID,Concat(TypeClassification,Value))="Change - Projeto de Soluções, Tecnologia e Processos",LookUp('Demandas TI',ID=VarID,IDAzureExecucao)=LookUp('Demandas TI',ID=VarID,IDAzure)),false,
+                
+                If(LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado",If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionExecution",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false))),
+                
+                If(And(varTipoDemanda="Novos Negócios",LookUp('Demandas TI', ID=VarID,StatusEstudo)="Aprovado"),If(Or(LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionClosing",LookUp('Demandas TI', ID=VarID,StatusAzure)="ExecutionDone"),true,false)))
+            X: =1134
+            Y: =568
+            ZIndex: =52
+

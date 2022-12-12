@@ -1,0 +1,71 @@
+{
+  "42711b62-13c1-4f6d-ac93-774c78badbc6": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1610-greyhound-localization-RelayFix/1.0.1610.3091/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://empresasrandon.sharepoint.com/sites/AplicativosTI": {
+        "dataSources": {
+          "Demandas TI": {
+            "tableName": "12808af1-5fcc-4e62-8582-405ca175852c"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Demandas TI"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "42711b62-13c1-4f6d-ac93-774c78badbc6"
+  },
+  "5c21a5fc-3e97-4b7c-8349-c991c4f2090a": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1599/1.0.1599.3017/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5c21a5fc-3e97-4b7c-8349-c991c4f2090a"
+  },
+  "9b58ace4-0a53-428b-a502-3a11ca5b9f90": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Usuários do Office 365",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1593/1.0.1593.2980/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuáriosdoOffice365",
+      "UsuáriosdoOffice365_1"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9b58ace4-0a53-428b-a502-3a11ca5b9f90"
+  }
+}

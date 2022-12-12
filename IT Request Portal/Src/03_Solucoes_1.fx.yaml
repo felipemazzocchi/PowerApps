@@ -1,0 +1,424 @@
+"'03_Solucoes_1' As screen":
+    BackgroundImage: =fundoazul
+    ImagePosition: =ImagePosition.Fill
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    Button1_23 As button:
+        BorderColor: =RGBA(116, 116, 116, 1)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(245, 246, 247, 0.51)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255, 255, 255, 0.52)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        FontWeight: =FontWeight.Semibold
+        Height: =600
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: |
+            =
+        PaddingRight: =5.56
+        PaddingTop: =5.56
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16.67
+        Text: =""
+        Width: =559
+        X: =35
+        Y: =100
+        ZIndex: =1
+
+    Inp_Demanda As text:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =Font.'Lato Light'
+        Height: =145
+        HintText: ="Clique aqui para descrever a sua demanda."
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =TextMode.MultiLine
+        PaddingLeft: =10
+        PaddingRight: =10
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Reset: =varReset
+        Width: =502
+        X: =715
+        Y: =294
+        ZIndex: =2
+
+    Inp_Ganhos As text:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =Font.'Lato Light'
+        Height: =145
+        HintText: ="Clique aqui para descrever os ganhos qualitativos e quantitativos com a solução. Aqui você deve descrever quais benefícios a demanda irá trazer para o seu processo. Descreva também os impactos financeiros como aumento de receita ou redução de despesas."
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =TextMode.MultiLine
+        PaddingLeft: =10
+        PaddingRight: =10
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Reset: =varReset
+        Width: =502
+        X: =715
+        Y: =487
+        ZIndex: =3
+
+    Label10 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: |-
+            ="Descrição da Demanda:"
+        Width: =242.3
+        X: =715
+        Y: =256
+        ZIndex: =4
+
+    Label10_1 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =39
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: |-
+            ="Ganhos com a Solução:"
+        Width: =287.87
+        X: =715
+        Y: =448
+        ZIndex: =5
+
+    lb_resumo_4 As htmlViewer:
+        Font: =Font.'Lato Light'
+        Height: =556
+        HtmlText: |-
+            ="<b>Requisitante: </b>" & Requisitante.Selected.DisplayName & 
+            "<br><br><b>Sponsor: </b>" & Sponsor.Selected.DisplayName &
+            "<br><br><b>Empresas: </b>" & Concat(EmpresasBeneficiadas.SelectedItems,Value & ", ") & 
+            "<br><br><b>Áreas Beneficiadas: </b>" & Concat(AreasBeneficiadas.SelectedItems,Value & ", ") &
+            "<br><br> <b>Nome da Demanda: </b>" & Inp_NomeDemanda.Text & 
+            "<br><br> <b>Demanda: </b><br>" & Inp_Demanda.Text & 
+            "<br><br><b>Ganhos: </b><br>" & Inp_Ganhos.Text &
+            "<br><br><b>Demanda é um Projeto Estratégico? </b><br>" & If(varApareceSN=1, If(Btn_Estrategia.Value = false,"Não.","Sim, ") & Inp_Estrategia) &
+            "<br><br><b>Requisito Legal com prazo, Auditoria ou Segurança da Informação? </b><br>" & If(varApareceSN=1, If(Btn_Requisito.Value = false,"Não.","Sim, ") & Inp_Requisito)
+            //& "<br><br><b>Anexo:</b> " & If(VarAnexo=0; "Anexo inserido"; "Não há anexos inseridos")
+        PaddingBottom: =15
+        PaddingLeft: =15
+        PaddingRight: =15
+        PaddingTop: =15
+        Size: =12.23
+        Width: =559
+        X: =36
+        Y: =144
+        ZIndex: =6
+
+    lb_requisitante_4 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(102, 182, 227, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        PaddingBottom: =0
+        PaddingLeft: =20
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: ="Informações da Demanda"
+        Width: =325
+        X: =670
+        Y: =65
+        ZIndex: =8
+
+    Button2_8 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(102, 182, 227, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Navigate('03_Solucoes_2',ScreenTransition.Fade) ; Set(varApareceSN,1)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =16
+        Text: ="Avançar"
+        Width: =152
+        X: =1120
+        Y: =660
+        ZIndex: =13
+
+    randon_8 As image:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =48
+        Image: |-
+            ="https://www.randon.com.br/media/1317/empresas_randon_transparente.png"
+        Width: =115
+        X: =1235
+        Y: =16
+        ZIndex: =14
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Button1_16 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(128, 128, 128, 1)
+            DisabledFill: =RGBA(128, 128, 128, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(116, 116, 116, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =917
+            Y: =685
+            ZIndex: =10
+
+        Button1_18 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            Color: =RGBA(32, 54, 71, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =1000
+            Y: =685
+            ZIndex: =11
+
+        Button1_19 As button:
+            BorderColor: =RGBA(116, 116, 116, 1)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =1
+            DisabledBorderColor: =RGBA(128, 128, 128, 1)
+            DisabledColor: =RGBA(128, 128, 128, 1)
+            DisabledFill: =RGBA(128, 128, 128, 1)
+            DisplayMode: =DisplayMode.Disabled
+            Fill: =RGBA(116, 116, 116, 1)
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            FontWeight: =FontWeight.Semibold
+            Height: =15
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: |
+                =
+            PaddingRight: =5.56
+            PaddingTop: =5.56
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =16.67
+            Text: =""
+            Width: =15
+            X: =958
+            Y: =685
+            ZIndex: =12
+
+    lb_requisitante_22 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =80
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Size: =20
+        Text: ="Resumo da Requisição de " & VarDemanda
+        Width: =508
+        X: =16
+        Y: =64
+        ZIndex: =16
+
+    Inp_NomeDemanda As text:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        Default: =""
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =1
+        Font: =Font.'Lato Light'
+        Height: =43
+        HintText: ="Clique aqui para nomear a sua demanda."
+        HoverBorderColor: =RGBA(32, 54, 71, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =TextMode.MultiLine
+        PaddingLeft: =10
+        PaddingRight: =10
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Reset: =varReset
+        Width: =502
+        X: =715
+        Y: =201
+        ZIndex: =17
+
+    Label10_2 As label:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Text: |-
+            ="Nome da Demanda:"
+        Width: =242.3
+        X: =715
+        Y: =163
+        ZIndex: =18
+
+    Button2_19 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(100, 118, 132, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(230, 230, 230, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: =Back(ScreenTransition.Fade)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =12
+        Text: ="Voltar"
+        Width: =67
+        X: =715
+        Y: =660
+        ZIndex: =19
+
+    Button2_33 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Color: =RGBA(90, 106, 119, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(230, 230, 230, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.Lato
+        Height: =67
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        OnSelect: |-
+            =Navigate('01_SelecionaDemanda');
+            Set(varReset,true);
+            Set(varReset,false)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =12
+        Text: ="Cancelar Requisição"
+        Width: =100
+        X: =16
+        Y: =660
+        ZIndex: =20
+

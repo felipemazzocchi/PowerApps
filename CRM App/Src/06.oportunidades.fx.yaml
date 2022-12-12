@@ -1,0 +1,425 @@
+"'06.oportunidades' As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+    BackgroundImage: ='ssc form'
+    ImagePosition: =ImagePosition.Fill
+
+    "galeria_oportunidades As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =474
+        Items: |-
+            =
+            
+            SortByColumns   (
+                Filter(Oportunidades, 
+                    Find(Lower(busca_5.Text), 
+                    Lower('Nombre de la Cuenta'.Value))
+                    ),
+            "ID",
+            Descending)
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate('06.oportunidades.view'); Set(varDeleta,false)
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =1317
+        X: =24
+        Y: =180
+        ZIndex: =1
+
+        Title9_5 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |-
+                ="#" & ThisItem.ID
+            Width: =50
+            Wrap: =false
+            X: =7
+            Y: =7
+            ZIndex: =1
+
+        NextArrow5_5 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =25
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =26
+            X: =1340
+            Y: =7
+            ZIndex: =4
+
+        Separator6_5 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        Body1_31 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Nombre de la Cuenta'.Value
+            Width: =166
+            Wrap: =false
+            X: =69
+            Y: =7
+            ZIndex: =6
+
+        Body1_37 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.Etapa.Value
+            Wrap: =false
+            X: =995
+            Y: =7
+            ZIndex: =7
+
+        Body1_32 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Nombre de la oportunidad'
+            Width: =284
+            Wrap: =false
+            X: =246
+            Y: =7
+            ZIndex: =14
+
+        Body1_35 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =Concat(ThisItem.Empresa,Value,", ")
+            Width: =257
+            Wrap: =false
+            X: =545
+            Y: =7
+            ZIndex: =15
+
+        Body1_36 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Valor estimado' & " USD"
+            Width: =120
+            Wrap: =false
+            X: =829
+            Y: =7
+            ZIndex: =17
+
+        Body1_38 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Modificado
+            Width: =72
+            Wrap: =false
+            X: =1238
+            Y: =7
+            ZIndex: =18
+
+        Body1_39 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Criado
+            Width: =72
+            Wrap: =false
+            X: =1152
+            Y: =7
+            ZIndex: =19
+
+    Label1_34 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Registro"
+        Width: =64
+        Wrap: =false
+        X: =24
+        Y: =140
+        ZIndex: =6
+
+    Label1_35 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Nombre de la Cuenta"
+        Width: =156
+        Wrap: =false
+        X: =88
+        Y: =140
+        ZIndex: =7
+
+    Label1_39 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Fase"
+        Width: =112
+        Wrap: =false
+        X: =1016
+        Y: =140
+        ZIndex: =9
+
+    Label1_36 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Oportunidad"
+        Width: =108
+        Wrap: =false
+        X: =268
+        Y: =140
+        ZIndex: =10
+
+    Label1_37 As label:
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =0
+        Size: =10
+        Text: ="Empresa"
+        Width: =193
+        Wrap: =false
+        X: =567
+        Y: =140
+        ZIndex: =11
+
+    Label1_38 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Valor Estimado"
+        Width: =132
+        Wrap: =false
+        X: =849
+        Y: =140
+        ZIndex: =12
+
+    Label1_40 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Creado"
+        Width: =112
+        Wrap: =false
+        X: =1171
+        Y: =140
+        ZIndex: =13
+
+    Label1_41 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Modificado"
+        Width: =101
+        Wrap: =false
+        X: =1257
+        Y: =140
+        ZIndex: =14
+
+    Group11_8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Button1_50 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(141, 198, 63, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =NewForm(form_oportunidades);
+                Navigate('06.oportunidades.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nuevo ")
+            PaddingLeft: =80
+            Size: =18
+            Text: ="Nueva Oportunidad"
+            Width: =275
+            X: =1072
+            Y: =675
+            ZIndex: =17
+
+        Icon1_23 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Add
+            OnSelect: |-
+                =NewForm(form_oportunidades);
+                Navigate('06.oportunidades.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nuevo ")
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            X: =1087
+            Y: =680
+            ZIndex: =18
+
+    Group10_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_52 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Refresh([@Oportunidades])
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Actualizar"
+            Width: =90
+            X: =1257
+            Y: =22
+            ZIndex: =16
+
+        Icon1_25 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: =Refresh([@Oportunidades])
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            X: =1270
+            Y: =22
+            ZIndex: =20
+
+    busca_5 As text:
+        BorderStyle: =BorderStyle.None
+        Default: =
+        Height: =88
+        HintText: ="Pesquisar por Nombre de la Cuenta"
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Reset: =varApaga
+        Width: =686
+        X: =545
+        Y: =24
+        ZIndex: =25
+
+    Group12_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =25
+
+        Button1_51 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Inicio"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =15
+
+        Icon1_24 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            X: =35
+            Y: =21
+            ZIndex: =19
+
+    Icon3_5 As icon.Cancel:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        FocusedBorderThickness: =0
+        Icon: =Icon.Cancel
+        OnSelect: =Set(varApaga, true) ; Set(varApaga, false)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Visible: =If(IsBlank(busca_5),false,true)
+        X: =1158
+        Y: =36
+        ZIndex: =26
+
+    Group1_12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        Button1_53 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: |-
+                ="Oportunidades
+                "
+            Width: =386
+            X: =134
+            Y: =22
+            ZIndex: =21
+
+        Icon2_20 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.Diamond
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =24
+

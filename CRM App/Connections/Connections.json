@@ -1,0 +1,102 @@
+{
+  "004a41bf-b050-4249-8a9a-17535ee288a2": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1611/1.0.1611.3104/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "UsuáriosdoOffice365"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "004a41bf-b050-4249-8a9a-17535ee288a2"
+  },
+  "8afb561b-daf8-4b9a-b10c-49eaef5d957e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1610-greyhound-localization-RelayFix/1.0.1610.3091/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://empresasrandon.sharepoint.com/sites/CRMFras-leExport": {
+        "dataSources": {
+          "Contactos": {
+            "tableName": "0bb8f422-a6e7-47a9-a088-e4a9e3ed455b"
+          },
+          "Cuentas Generales": {
+            "tableName": "a8de8f09-fdcd-40f0-9b06-ce99b0ce8fb4"
+          },
+          "Formaciones realizadas": {
+            "tableName": "b6f33e12-792a-4712-bc81-a3e579f873a5"
+          },
+          "Información de la flota": {
+            "tableName": "d81aed13-b61b-4f2a-88ca-f783e9926a01"
+          },
+          "Oportunidades": {
+            "tableName": "3aaff211-f271-4bbd-9b3c-e37b1a5e5ca3"
+          },
+          "Prueba de Productos": {
+            "tableName": "fd398d54-6d56-412a-b3bd-73d5507f5083"
+          },
+          "Resumen de visitas": {
+            "tableName": "d6b93c7a-5925-44ad-9380-5f58f92c962a"
+          },
+          "Sell Out": {
+            "tableName": "dba812b2-1f49-44a4-bdf7-15bcb9fd9a14"
+          },
+          "Stock": {
+            "tableName": "96f007e2-02ef-4722-801f-51417354901b"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Contactos",
+      "Formaciones realizadas",
+      "Información de la flota",
+      "Oportunidades",
+      "Prueba de Productos",
+      "Stock",
+      "Sell Out",
+      "Cuentas Generales",
+      "Resumen de visitas"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8afb561b-daf8-4b9a-b10c-49eaef5d957e"
+  },
+  "8f03c8f0-e1ad-462c-a084-e3ebde123dbd": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1611/1.0.1611.3104/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8f03c8f0-e1ad-462c-a084-e3ebde123dbd"
+  }
+}

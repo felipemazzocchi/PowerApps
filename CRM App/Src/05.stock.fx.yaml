@@ -1,0 +1,389 @@
+"'05.stock' As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+    BackgroundImage: ='ssc form'
+    ImagePosition: =ImagePosition.Fill
+
+    "galeria_stock As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =481
+        Items: |-
+            =
+            
+            SortByColumns   (
+                Filter(Stock, 
+                    Find(Lower(busca_4.Text), 
+                    Lower('Nombre de la Cuenta'.Value))
+                    ),
+            "ID",
+            Descending)
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate('05.stock.view')
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =1318
+        X: =20
+        Y: =172
+        ZIndex: =1
+
+        Title9_4 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: |-
+                ="#" & ThisItem.ID
+            Width: =78
+            Wrap: =false
+            X: =7
+            Y: =7
+            ZIndex: =1
+
+        NextArrow5_4 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =25
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =26
+            X: =1340
+            Y: =7
+            ZIndex: =4
+
+        Separator6_4 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        Body1_22 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Nombre de la Cuenta'.Value
+            Width: =337
+            Wrap: =false
+            X: =96
+            Y: =7
+            ZIndex: =6
+
+        Body1_34 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Criado por'.DisplayName
+            Width: =205
+            Wrap: =false
+            X: =1112
+            Y: =7
+            ZIndex: =7
+
+        Body1_29 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.Mes.Value & "/" & ThisItem.'Año de stock'.Value
+            Width: =125
+            Wrap: =false
+            X: =398
+            Y: =7
+            ZIndex: =14
+
+        Body1_30 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =Concat(ThisItem.'Stock relacionado con',Value,", ")
+            Width: =282
+            Wrap: =false
+            X: =529
+            Y: =7
+            ZIndex: =15
+
+        Body1_33 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Dias de stock'
+            Width: =77
+            Wrap: =false
+            X: =816
+            Y: =7
+            ZIndex: =17
+
+        Body1_41 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Cantidad de Stock (Pza)'
+            Width: =77
+            Wrap: =false
+            X: =957
+            Y: =7
+            ZIndex: =18
+
+    Label1_28 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Registro"
+        Width: =64
+        Wrap: =false
+        X: =26
+        Y: =132
+        ZIndex: =6
+
+    Label1_29 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Nombre de la Cuenta"
+        Width: =156
+        Wrap: =false
+        X: =112
+        Y: =132
+        ZIndex: =7
+
+    Label1_33 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Creado por"
+        Width: =232
+        Wrap: =false
+        X: =1126
+        Y: =132
+        ZIndex: =9
+
+    Label1_30 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Data de Stock"
+        Width: =108
+        Wrap: =false
+        X: =413
+        Y: =132
+        ZIndex: =10
+
+    Label1_31 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Stock relacionado con"
+        Width: =193
+        Wrap: =false
+        X: =547
+        Y: =132
+        ZIndex: =11
+
+    Label1_32 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Días de Stock                Cantidad"
+        Width: =297
+        Wrap: =false
+        X: =829
+        Y: =132
+        ZIndex: =12
+
+    Group11_11 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        Button1_72 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(141, 198, 63, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =NewForm(form_stock);
+                Navigate('05.stock.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nuevo ")
+            PaddingLeft: =80
+            Size: =18
+            Text: |-
+                ="Nuevo registro     
+                de Stock"
+            Width: =275
+            X: =1072
+            Y: =675
+            ZIndex: =14
+
+        Icon1_39 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Add
+            OnSelect: |-
+                =NewForm(form_stock);
+                Navigate('05.stock.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nuevo ")
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            X: =1087
+            Y: =680
+            ZIndex: =15
+
+    Group12_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Button1_73 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Inicio"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =13
+
+        Icon1_40 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            X: =35
+            Y: =21
+            ZIndex: =16
+
+    busca_4 As text:
+        BorderStyle: =BorderStyle.None
+        Default: =
+        Height: =88
+        HintText: ="Pesquisar por Nombre de la Cuenta"
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Reset: =varApaga
+        Width: =705
+        X: =527
+        Y: =24
+        ZIndex: =19
+
+    Group1_18 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        Button1_74 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: ="Stock"
+            Width: =235
+            X: =134
+            Y: =22
+            ZIndex: =17
+
+        Icon2_26 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.Items
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =18
+
+    Icon3_4 As icon.Cancel:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        FocusedBorderThickness: =0
+        Icon: =Icon.Cancel
+        OnSelect: =Set(varApaga, true) ; Set(varApaga, false)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Visible: =If(IsBlank(busca_4),false,true)
+        X: =1158
+        Y: =36
+        ZIndex: =20
+
+    Group10_5 As group:
+        Height: =5
+        Width: =5
+        X: =19
+        Y: =20
+        ZIndex: =23
+
+        Button1_75 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Refresh([@'Formaciones realizadas'])
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Actualizar"
+            Width: =90
+            X: =1255
+            Y: =22
+            ZIndex: =21
+
+        Icon1_36 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: =Refresh([@'Formaciones realizadas'])
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            X: =1268
+            Y: =22
+            ZIndex: =22
+

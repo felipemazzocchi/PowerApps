@@ -1,0 +1,1249 @@
+"'06.oportunidades.view' As screen.'tabletLayout_Email_ver3.0'":
+    BackgroundImage: ='ssc form'
+
+    form_oportunidades_1 As form:
+        DataSource: =Oportunidades
+        DefaultMode: =FormMode.View
+        Height: =518
+        Item: =galeria_oportunidades.Selected
+        SnapToColumns: =false
+        Width: =1312
+        X: =26
+        Y: =136
+        ZIndex: =6
+
+        "'Fecha de Cierre_DataCard2' As typedDataCard.dateEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FechadeCierre"
+            Default: =ThisItem.'Fecha de Cierre'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"FechadeCierre")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =DataCardValue103.SelectedDate
+            Width: =175
+            X: =4
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey132 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue103 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage105 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue103.Y + DataCardValue103.Height
+                ZIndex: =3
+
+            StarVisible105 As label:
+                Align: =Align.Center
+                Height: =DataCardKey132.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey132.Y
+                ZIndex: =4
+
+        "'Criado por_DataCard1_1' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Author"
+            Default: =ThisItem.'Criado por'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Author")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =DataCardValue96_1.Selected
+            Width: =210
+            X: =5
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey98_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue96_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].'Criado por')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(Oportunidades.'Criado por',DataCardValue96_1.SearchText)
+                SelectMultiple: =false
+                Size: =11
+                Template: =ListItemTemplate.Person
+                Width: =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage94_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue96_1.Y + DataCardValue96_1.Height
+                ZIndex: =3
+
+            StarVisible94_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey98_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey98_1.Y
+                ZIndex: =4
+
+        Criado_DataCard1_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Created"
+            Default: =ThisItem.Criado
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Created")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Width: =150
+            X: =6
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey97_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue95_1 As label:
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: =Parent.Default
+                Width: =Parent.Width - 20
+                Wrap: =false
+                Y: =39
+                ZIndex: =2
+
+        "'Modificado por_DataCard1_1' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Editor"
+            Default: =ThisItem.'Modificado por'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Editor")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue98_1.Selected
+            Width: =209
+            X: =7
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey100_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue98_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].'Modificado por')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(Oportunidades.'Modificado por',DataCardValue98_1.SearchText)
+                SelectMultiple: =false
+                Size: =11
+                Template: =ListItemTemplate.Person
+                Width: =Parent.Width - 20
+                X: =1
+                Y: |
+                    =39
+                ZIndex: =2
+
+            ErrorMessage95_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue98_1.Y + DataCardValue98_1.Height
+                ZIndex: =3
+
+            StarVisible95_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey100_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey100_1.Y
+                ZIndex: =4
+
+        Modificado_DataCard2_1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Modified"
+            Default: =ThisItem.Modificado
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Modified")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =150
+            X: =8
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey99_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue97_1 As label:
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: =Parent.Default
+                Width: =Parent.Width - 20
+                Wrap: =false
+                Y: =39
+                ZIndex: =2
+
+        Probabilidad_DataCard1_1 As typedDataCard.numberEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Probabilidad"
+            Default: =ThisItem.Probabilidad
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Probabilidad")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =Value(DataCardValue99_1.Text)
+            Visible: =If(DataCardValue78_1.Selected.Value="Cerrado y Perdido",false,true)
+            Width: =218
+            X: =11
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey108_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue99_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage96_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue99_1.Y + DataCardValue99_1.Height
+                ZIndex: =3
+
+            StarVisible96_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey108_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey108_1.Y
+                ZIndex: =4
+
+        "'Información adicional de la pérdida_DataCard1_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Informaci_x00f3_nadicionaldelap_"
+            Default: =ThisItem.'Información adicional de la pérdida'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Informaci_x00f3_nadicionaldelap_")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =272
+            MaxLength: =DataSourceInfo([@Oportunidades], DataSourceInfo.MaxLength, "Informaci_x00f3_nadicionaldelap_")
+            Required: =false
+            Update: =DataCardValue94_1.Text
+            Visible: =If(DataCardValue78_1.Selected.Value="Cerrado y Perdido",true,false)
+            Width: =436
+            WidthFit: =If(DataCardValue78_1.Selected.Value="Cerrado y Perdido",true,false)
+            X: =2
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey96_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue94_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =207
+                MaxLength: =Parent.MaxLength
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =460
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage93_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue94_1.Y + DataCardValue94_1.Height
+                ZIndex: =3
+
+            StarVisible93_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey96_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey96_1.Y
+                ZIndex: =4
+
+        "'Nombre de la Cuenta_DataCard10_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NombredelaCuenta"
+            Default: =ThisItem.'Nombre de la Cuenta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"NombredelaCuenta")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue92_1.Selected
+            Width: =654
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey94_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 50
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue92_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].'Nombre de la Cuenta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Oportunidades.'Nombre de la Cuenta',DataCardValue92_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 50
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage91_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue92_1.Y + DataCardValue92_1.Height
+                ZIndex: =3
+
+            StarVisible91_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey94_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey94_1.Y
+                ZIndex: =4
+
+        "'Nombre de la oportunidad_DataCard2_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Nombredelaoportunidad"
+            Default: =ThisItem.'Nombre de la oportunidad'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Nombredelaoportunidad")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Oportunidades], DataSourceInfo.MaxLength, "Nombredelaoportunidad")
+            Required: =false
+            Update: =DataCardValue75_1.Text
+            Width: =654
+            X: =1
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey77_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue75_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage74_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue75_1.Y + DataCardValue75_1.Height
+                ZIndex: =3
+
+            StarVisible74_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey77_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey77_1.Y
+                ZIndex: =4
+
+        "'Valor estimado_DataCard2_1' As typedDataCard.numberEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Valorestimado"
+            Default: =ThisItem.'Valor estimado'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Valorestimado")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: |
+                =82
+            Required: =false
+            Update: =Value(DataCardValue76_1.Text)
+            Width: =218
+            X: =2
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey78_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue76_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default & " USD"
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage75_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue76_1.Y + DataCardValue76_1.Height
+                ZIndex: =3
+
+            StarVisible75_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey78_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey78_1.Y
+                ZIndex: =4
+
+        Recurrencia_DataCard2_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Recurrencia"
+            Default: =ThisItem.Recurrencia
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Recurrencia")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =DataCardValue91_1.Selected
+            Width: =175
+            X: =3
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey89_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue91_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].Recurrencia)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Oportunidades.Recurrencia,DataCardValue91_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage90_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue91_1.Y + DataCardValue91_1.Height
+                ZIndex: =3
+
+            StarVisible90_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey89_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey89_1.Y
+                ZIndex: =4
+
+        Empresa_DataCard3_1 As typedDataCard.comboBoxMultiSelectEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Empresa"
+            Default: =ThisItem.Empresa
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Empresa")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =DataCardValue77_1.SelectedItems
+            Width: =763
+            X: =9
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey79_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue77_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].Empresa)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Oportunidades.Empresa,DataCardValue77_1.SearchText)
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage76_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue77_1.Y + DataCardValue77_1.Height
+                ZIndex: =3
+
+            StarVisible76_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey79_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey79_1.Y
+                ZIndex: =4
+
+        Etapa_DataCard2_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Etapa"
+            Default: =ThisItem.Etapa
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Etapa")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =DataCardValue78_1.Selected
+            Width: =218
+            X: =10
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey80_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue78_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].Etapa)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Oportunidades.Etapa,DataCardValue78_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage77_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue78_1.Y + DataCardValue78_1.Height
+                ZIndex: =3
+
+            StarVisible77_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey80_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey80_1.Y
+                ZIndex: =4
+
+        "'Motivo de la pérdida_DataCard2_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Motivodeperda"
+            Default: =ThisItem.'Motivo de la pérdida'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Motivodeperda")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =84
+            Required: =false
+            Update: =DataCardValue85_1.Selected
+            Visible: =If(DataCardValue78_1.Selected.Value="Cerrado y Perdido",true,false)
+            Width: =218
+            X: =12
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey81_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =307
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue85_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Oportunidades].'Motivo de la pérdida')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Oportunidades.'Motivo de la pérdida',DataCardValue85_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage78_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue85_1.Y + DataCardValue85_1.Height
+                ZIndex: =3
+
+            StarVisible78_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey81_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey81_1.Y
+                ZIndex: =4
+
+        "'Información adicional_DataCard2_1' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Informaci_x00f3_nadicional"
+            Default: =ThisItem.'Información adicional'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"Informaci_x00f3_nadicional")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =265
+            MaxLength: =DataSourceInfo([@Oportunidades], DataSourceInfo.MaxLength, "Informaci_x00f3_nadicional")
+            Required: =false
+            Update: =DataCardValue90_1.Text
+            Width: =545
+            X: =1
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey82_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue90_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =200
+                MaxLength: =Parent.MaxLength
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage89_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue90_1.Y + DataCardValue90_1.Height
+                ZIndex: =3
+
+            StarVisible89_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey82_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey82_1.Y
+                ZIndex: =4
+
+        Anexos_DataCard6_1 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Oportunidades],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =272
+            Required: =false
+            Update: =DataCardValue93_1.Attachments
+            Width: =277
+            X: =3
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey95_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue93_1 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =203
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =11
+                Tooltip: =Parent.DisplayName
+                Width: =247
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage92_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue93_1.Y + DataCardValue93_1.Height
+                ZIndex: =3
+
+            StarVisible92_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey95_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey95_1.Y
+                ZIndex: =4
+
+    Group13_13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Button1_54 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(0, 121, 187, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =EditForm([@form_oportunidades]);
+                Set(varNE , "Editar ") ;
+                Navigate('06.oportunidades.edit')
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Editar"
+            Width: =230
+            X: =1116
+            Y: =675
+            ZIndex: =7
+
+        Icon1_26 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =EditForm([@form_oportunidades]);
+                Set(varNE , "Editar ") ;
+                Navigate('06.oportunidades.edit')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =1130
+            Y: =677
+            ZIndex: =8
+
+    Group13_14 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =18
+        ZIndex: =12
+
+        Button1_55 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(203, 102, 102, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Remover"
+            Width: =230
+            X: =844
+            Y: =675
+            ZIndex: =10
+
+        Icon1_27 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =858
+            Y: =677
+            ZIndex: =11
+
+    Group1_13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Button1_56 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: ="Detalles de la Oportunidad"
+            Width: =603
+            X: =134
+            Y: =22
+            ZIndex: =13
+
+        Icon2_21 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.Diamond
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =14
+
+    ContainerDeleta_3 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(80, 91, 112, 0.82)
+        Height: =768
+        Visible: =varDeleta
+        Width: =1366
+        ZIndex: =18
+
+        Image2_3 As image:
+            Height: =468
+            Image: =container
+            ImagePosition: =ImagePosition.Stretch
+            Width: =790
+            X: =295
+            Y: =150
+            ZIndex: =1
+
+        Label2_4 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =136
+            Size: =36
+            Text: ="Realmente desea eliminar el registro?"
+            Width: =453
+            X: =457
+            Y: =216
+            ZIndex: =4
+
+        Group14_3 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            Si_3 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(203, 102, 102, 1)
+                Height: =115
+                OnSelect: =Remove([@Oportunidades], galeria_oportunidades.Selected); If (IsEmpty(Errors([@Oportunidades], galeria_oportunidades.Selected)), Back()) ; Set(varDeleta,false)
+                PaddingLeft: =100
+                Text: ="Si, remover"
+                Width: =253
+                X: =708
+                Y: =404
+                ZIndex: =2
+
+            Icon4_8 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.Trash
+                OnSelect: =Remove([@Oportunidades], galeria_oportunidades.Selected); If (IsEmpty(Errors([@Oportunidades], galeria_oportunidades.Selected)), Back()) ; Set(varDeleta,false)
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =728
+                Y: =421
+                ZIndex: =6
+
+        Group15_4 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            No_4 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(186, 202, 226, 1)
+                Height: =115
+                OnSelect: =Set(varDeleta,false)
+                PaddingLeft: =100
+                Text: ="No, volver"
+                Width: =253
+                X: =386
+                Y: =404
+                ZIndex: =3
+
+            Icon4_7 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.BackArrow
+                OnSelect: =Set(varDeleta,false)
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =407
+                Y: =421
+                ZIndex: =5
+
+    Group13_15 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        Button1_57 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: |-
+                =ResetForm(form_contato);
+                NewForm(form_contato);Back()
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Volver"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =16
+
+        Icon1_28 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =58
+            Icon: =Icon.BackArrow
+            OnSelect: |-
+                =ResetForm(form_contato);
+                NewForm(form_contato);Back()
+            PaddingBottom: =12
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =12
+            X: =35
+            Y: =27
+            ZIndex: =17
+

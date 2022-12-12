@@ -1,0 +1,458 @@
+"'01.contacto' As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+    BackgroundImage: ='ssc form'
+
+    "galeria_contato As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =485
+        Items: |-
+            =SortByColumns   (
+                Filter(Contactos, 
+                    Find(Lower(busca.Text), 
+                    Lower('Nombre completo'))
+                    ),
+            "ID",
+            Descending)
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate('01.contacto.view');Set(varDeleta,false)
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =1313
+        X: =28
+        Y: =170
+        ZIndex: =4
+
+        Title9 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Tratamiento.Value & " " & ThisItem.'Nombre completo'
+            Width: =240
+            Wrap: =false
+            Y: =7
+            ZIndex: =1
+
+        Body1 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.'Nombre de la Cuenta'.Value
+            Width: =125
+            Wrap: =false
+            X: =240
+            Y: =7
+            ZIndex: =3
+
+        NextArrow5 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =25
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =26
+            X: =1340
+            Y: =7
+            ZIndex: =4
+
+        Separator6 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        Body1_1 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Ocupación
+            Width: =119
+            Wrap: =false
+            X: =374
+            Y: =7
+            ZIndex: =6
+
+        Body1_2 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.'Correo electrónico'
+            Width: =250
+            Wrap: =false
+            X: =507
+            Y: =7
+            ZIndex: =7
+
+        Body1_3 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =Upper(ThisItem.Teléfono)
+            Width: =125
+            Wrap: =false
+            X: =777
+            Y: =7
+            ZIndex: =8
+
+        Body1_4 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.Móvil
+            Width: =125
+            Wrap: =false
+            X: =901
+            Y: =7
+            ZIndex: =9
+
+        Body1_5 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =Text(ThisItem.Criado,"[$-pt-BR]dd/mm/yyyy")
+            Width: =66
+            Wrap: =false
+            X: =1025
+            Y: =7
+            ZIndex: =10
+
+        Body1_6 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =Text(ThisItem.Criado,"[$-pt-BR]dd/mm/yyyy")
+            Width: =63
+            Wrap: =false
+            X: =1090
+            Y: =7
+            ZIndex: =11
+
+        Body1_7 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: =ThisItem.'Criado por'.DisplayName
+            Width: =141
+            Wrap: =false
+            X: =1165
+            Y: =7
+            ZIndex: =12
+
+    Label1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Nombre del Contacto"
+        Width: =175
+        Wrap: =false
+        X: =28
+        Y: =133
+        ZIndex: =8
+
+    Label1_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Nombre de la Cuenta"
+        Width: =156
+        Wrap: =false
+        X: =265
+        Y: =133
+        ZIndex: =9
+
+    Label1_2 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Cargo"
+        Width: =175
+        Wrap: =false
+        X: =400
+        Y: =133
+        ZIndex: =10
+
+    Label1_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Correo Electronico"
+        Width: =175
+        Wrap: =false
+        X: =528
+        Y: =133
+        ZIndex: =11
+
+    Label1_4 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        PaddingLeft: =0
+        Size: =9
+        Text: ="Telefono"
+        Width: =163
+        Wrap: =false
+        X: =809
+        Y: =133
+        ZIndex: =12
+
+    Label1_5 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Movil"
+        Width: =133
+        Wrap: =false
+        X: =928
+        Y: =133
+        ZIndex: =13
+
+    Label1_8 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Creado"
+        Width: =73
+        Wrap: =false
+        X: =1051
+        Y: =133
+        ZIndex: =14
+
+    Label1_9 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Modif."
+        Width: =89
+        Wrap: =false
+        X: =1116
+        Y: =133
+        ZIndex: =15
+
+    Label1_20 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =9
+        Text: ="Creado por"
+        Width: =144
+        Wrap: =false
+        X: =1187
+        Y: =133
+        ZIndex: =16
+
+    Group10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Button1_12 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Refresh([@Contactos])
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Actualizar"
+            Width: =90
+            X: =1257
+            Y: =22
+            ZIndex: =2
+
+        Icon1_2 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: =Refresh([@Contactos])
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            X: =1270
+            Y: =22
+            ZIndex: =7
+
+    Group11 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Button1_11 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(141, 198, 63, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =NewForm(form_contato);
+                Navigate('01.contacto.edit');
+                Set(varReset,true) ; Set(varReset,false);
+                Set(varNE, "Agregar nuevo ");
+                Set(varDeleta,false)
+            PaddingLeft: =90
+            Size: =18
+            Text: ="Nuevo Contacto"
+            Width: =275
+            X: =1072
+            Y: =675
+            ZIndex: =3
+
+        Icon1 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Add
+            OnSelect: |-
+                =NewForm(form_contato);
+                Navigate('01.contacto.edit');
+                Set(varReset,true) ; Set(varReset,false);
+                Set(varNE, "Agregar nuevo ");
+                Set(varDeleta,false)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            X: =1087
+            Y: =680
+            ZIndex: =5
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        Button1_10 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: |-
+                ="Contactos
+                "
+            Width: =368
+            X: =134
+            Y: =22
+            ZIndex: =17
+
+        Icon2_9 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.People
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =18
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        Button1_13 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Inicio"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =1
+
+        Icon1_1 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            X: =35
+            Y: =21
+            ZIndex: =6
+
+    busca As text:
+        BorderStyle: =BorderStyle.None
+        Default: =
+        Height: =88
+        HintText: ="Pesquisar por Nombre del Contacto"
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Reset: =varApaga
+        Width: =705
+        X: =527
+        Y: =24
+        ZIndex: =20
+
+    Icon3 As icon.Cancel:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        FocusedBorderThickness: =0
+        Icon: =Icon.Cancel
+        OnSelect: =Set(varApaga, true) ; Set(varApaga, false)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Visible: =If(IsBlank(busca),false,true)
+        X: =1158
+        Y: =36
+        ZIndex: =21
+

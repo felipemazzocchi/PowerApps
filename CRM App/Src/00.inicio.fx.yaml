@@ -1,0 +1,373 @@
+"'00.inicio' As screen":
+    BackgroundImage: ='SSC boasvindas'
+    Fill: =
+
+    Title1_1 As label:
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =59
+        PaddingRight: =10
+        Size: =22
+        Text: ="CRM | Fras-le Exportação"
+        Width: =496
+        X: =785
+        Y: =120
+        ZIndex: =11
+
+    Title1_15 As label:
+        Color: =RGBA(0, 13, 75, 1)
+        Font: =Font.Lato
+        Height: =55
+        PaddingRight: =10
+        Size: =16
+        Text: ="Bienvenido(a), " & User().FullName
+        Width: =496
+        X: =784
+        Y: =165
+        ZIndex: =12
+
+    Button1_9 As button:
+        BorderThickness: =0
+        Fill: =RGBA(130, 141, 158, 1)
+        Font: =Font.'Lato Light'
+        FontWeight: =FontWeight.Normal
+        Height: =47
+        Size: =14
+        Text: |-
+            ="Soporte
+            "
+        Width: =180
+        X: =1101
+        Y: =576
+        ZIndex: =13
+
+    Image1 As image:
+        Image: =User().Image
+        RadiusBottomLeft: =51515
+        RadiusBottomRight: =51515
+        RadiusTopLeft: =51515
+        RadiusTopRight: =51515
+        X: =665
+        Y: =120
+        ZIndex: =23
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Contactos
+                "
+            Width: =180
+            X: =665
+            Y: =248
+            ZIndex: =1
+
+        Icon2 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.People
+            Width: =29
+            X: =679
+            Y: =271
+            ZIndex: =14
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_1 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('02.cuentas')
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Cuentas
+                "
+            Width: =180
+            X: =882
+            Y: =248
+            ZIndex: =2
+
+        Icon2_1 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.OfficeBuilding
+            Width: =29
+            X: =896
+            Y: =271
+            ZIndex: =15
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_2 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('04.formacoes')
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Formaciones Realizadas
+                "
+            Width: =180
+            X: =1100
+            Y: =248
+            ZIndex: =3
+
+        Icon2_2 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Ribbon
+            Width: =29
+            X: =1115
+            Y: =271
+            ZIndex: =16
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_4 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('06.oportunidades')
+            PaddingLeft: =60
+            Size: =14
+            Text: ="Oportunidad"
+            Width: =180
+            X: =664
+            Y: =355
+            ZIndex: =5
+
+        Icon2_3 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Diamond
+            Width: =29
+            X: =679
+            Y: =378
+            ZIndex: =17
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_6 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('03.visitas')
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Resumen de Visitas
+                "
+            Width: =180
+            X: =881
+            Y: =355
+            ZIndex: =7
+
+        Icon2_4 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Location
+            Width: =29
+            X: =896
+            Y: =378
+            ZIndex: =18
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_7 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            OnSelect: =Navigate('05.stock')
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Stock
+                "
+            Width: =180
+            X: =1101
+            Y: =355
+            ZIndex: =8
+
+        Icon2_5 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Items
+            Width: =29
+            X: =1115
+            Y: =378
+            ZIndex: =19
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_8 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Disabled
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Sell Out
+                "
+            Width: =180
+            X: =1098
+            Y: =462
+            ZIndex: =9
+
+        Icon2_8 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Shop
+            Width: =29
+            X: =1115
+            Y: =485
+            ZIndex: =22
+
+    Group8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_3 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Disabled
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Informacion de la Flota
+                "
+            Width: =180
+            X: =880
+            Y: =462
+            ZIndex: =4
+
+        Icon2_7 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.Cars
+            Width: =29
+            X: =896
+            Y: =485
+            ZIndex: =21
+
+    Group9 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Button1_5 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Disabled
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =79
+            PaddingLeft: =60
+            Size: =14
+            Text: |-
+                ="Prueba de Productos
+                "
+            Width: =180
+            X: =663
+            Y: =462
+            ZIndex: =6
+
+        Icon2_6 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            Height: =33
+            Icon: =Icon.ToolsWrench
+            Width: =29
+            X: =679
+            Y: =485
+            ZIndex: =20
+

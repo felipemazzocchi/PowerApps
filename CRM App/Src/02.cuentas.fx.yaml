@@ -1,0 +1,496 @@
+"'02.cuentas' As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+    BackgroundImage: ='ssc form'
+    ImagePosition: =ImagePosition.Fill
+
+    "galeria_contas As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        Height: =487
+        Items: |-
+            =
+            
+            SortByColumns   (
+                Filter('Cuentas Generales', 
+                    Find(Lower(busca_1.Text), 
+                    Lower('Nombre de la Cuenta'))
+                    ),
+            "ID",
+            Descending)
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate('02.cuentas.view');Set(varDeleta,false)
+        TemplatePadding: =0
+        TemplateSize: =40
+        Width: =1317
+        X: =24
+        Y: =172
+        ZIndex: =1
+
+        Title9_1 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Nombre de la Cuenta'
+            Width: =161
+            Wrap: =false
+            X: =7
+            Y: =7
+            ZIndex: =1
+
+        Body1_8 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.Title
+            Wrap: =false
+            X: =220
+            Y: =7
+            ZIndex: =3
+
+        NextArrow5_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =25
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            TabIndex: =0
+            Tooltip: ="Exibir detalhes do item"
+            Width: =26
+            X: =1340
+            Y: =7
+            ZIndex: =4
+
+        Separator6_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =5
+
+        Body1_9 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Nombre Comercial'
+            Width: =177
+            Wrap: =false
+            X: =193
+            Y: =7
+            ZIndex: =6
+
+        Body1_10 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Pais de Facturacion'.Value
+            Width: =305
+            Wrap: =false
+            X: =608
+            Y: =7
+            ZIndex: =7
+
+        Body1_11 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.'Alias del Propietario de la Cuenta'.DisplayName
+            Width: =168
+            Wrap: =false
+            X: =865
+            Y: =7
+            ZIndex: =8
+
+        Body1_13 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: |-
+                =Text(ThisItem.Criado,"[$-pt-BR]dd/mm/yyyy")
+                //ThisItem.Criado
+            Width: =72
+            Wrap: =false
+            X: =1044
+            Y: =7
+            ZIndex: =10
+
+        Body1_14 As label:
+            Align: =Align.Center
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =Text(ThisItem.Criado,"[$-pt-BR]dd/mm/yyyy")
+            Width: =72
+            Wrap: =false
+            X: =1116
+            Y: =7
+            ZIndex: =11
+
+        Body1_15 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =9
+            Text: =ThisItem.'Criado por'.DisplayName
+            Width: =118
+            Wrap: =false
+            X: =1199
+            Y: =7
+            ZIndex: =12
+
+        Body1_16 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Tipo de Registro de Cuenta'.Value
+            Width: =117
+            Wrap: =false
+            X: =485
+            Y: =7
+            ZIndex: =13
+
+        Body1_42 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Oficina de Ventas'.Value
+            Width: =117
+            Wrap: =false
+            X: =718
+            Y: =7
+            ZIndex: =14
+
+        Body1_43 As label:
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.'Status de la Cuenta'.Value
+            Width: =121
+            Wrap: =false
+            X: =371
+            Y: =6
+            ZIndex: =15
+
+    Label1_6 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Nombre de la Cuenta"
+        Width: =175
+        Wrap: =false
+        X: =24
+        Y: =132
+        ZIndex: =6
+
+    Label1_7 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Nombre Comercial"
+        Width: =156
+        Wrap: =false
+        X: =212
+        Y: =132
+        ZIndex: =7
+
+    Label1_10 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Tipo de Cuenta"
+        Width: =175
+        Wrap: =false
+        X: =503
+        Y: =132
+        ZIndex: =8
+
+    Label1_11 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="País"
+        Width: =175
+        Wrap: =false
+        X: =627
+        Y: =132
+        ZIndex: =9
+
+    Label1_12 As label:
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =0
+        Size: =10
+        Text: ="Propietário"
+        Width: =163
+        Wrap: =false
+        X: =887
+        Y: =132
+        ZIndex: =10
+
+    Label1_14 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Creado"
+        Width: =73
+        Wrap: =false
+        X: =1064
+        Y: =132
+        ZIndex: =14
+
+    Label1_15 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Modificado"
+        Width: =89
+        Wrap: =false
+        X: =1136
+        Y: =132
+        ZIndex: =15
+
+    Label1_21 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Creado por"
+        Width: =119
+        Wrap: =false
+        X: =1215
+        Y: =132
+        ZIndex: =16
+
+    Group11_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Button1_21 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(141, 198, 63, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =NewForm(form_contas);
+                Navigate('02.cuentas.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nueva ");
+                Set(varError,false);
+                Set(varDeleta,false)
+            PaddingLeft: =90
+            Size: =18
+            Text: ="Nueva Cuenta"
+            Width: =275
+            X: =1072
+            Y: =675
+            ZIndex: =19
+
+        Icon1_5 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Add
+            OnSelect: |-
+                =NewForm(form_contas);
+                Navigate('02.cuentas.edit');
+                Set(varReset,true) ; Set(varReset,true);
+                Set(varNE, "Agregar nueva ");
+                Set(varError,false);
+                Set(varDeleta,false)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            X: =1087
+            Y: =680
+            ZIndex: =20
+
+    Group10_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =25
+
+        Button1_23 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Refresh([@'Cuentas Generales'])
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Actualizar"
+            Width: =90
+            X: =1257
+            Y: =22
+            ZIndex: =18
+
+        Icon1_55 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Reload
+            OnSelect: =Refresh([@'Cuentas Generales'])
+            PaddingBottom: =15
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =20
+            X: =1270
+            Y: =22
+            ZIndex: =22
+
+    busca_1 As text:
+        BorderStyle: =BorderStyle.None
+        Default: =
+        Height: =88
+        HintText: ="Pesquisar por Nombre de la Cuenta"
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Reset: =varApaga
+        Width: =705
+        X: =527
+        Y: =24
+        ZIndex: =27
+
+    Group12_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =27
+
+        Button1_22 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Inicio"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =17
+
+        Icon1_8 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Icon: =Icon.Home
+            OnSelect: =Navigate('00.inicio')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            X: =35
+            Y: =21
+            ZIndex: =21
+
+    Icon3_1 As icon.Cancel:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        FocusedBorderThickness: =0
+        Icon: =Icon.Cancel
+        OnSelect: =Set(varApaga, true) ; Set(varApaga, false)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Visible: =If(IsBlank(busca_1),false,true)
+        X: =1158
+        Y: =36
+        ZIndex: =28
+
+    Group1_4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Button1_24 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: |-
+                ="Cuentas
+                "
+            Width: =368
+            X: =134
+            Y: =22
+            ZIndex: =23
+
+        Icon2_12 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.OfficeBuilding
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =26
+
+    Label1_42 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Oficina de Ventas"
+        Width: =175
+        Wrap: =false
+        X: =740
+        Y: =132
+        ZIndex: =29
+
+    Label1_43 As label:
+        FontWeight: =FontWeight.Semibold
+        Size: =10
+        Text: ="Status"
+        Width: =156
+        Wrap: =false
+        X: =391
+        Y: =132
+        ZIndex: =30
+

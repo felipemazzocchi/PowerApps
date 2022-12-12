@@ -1,0 +1,1182 @@
+"'03.visitas.view' As screen.'tabletLayout_Email_ver3.0'":
+    BackgroundImage: ='ssc form'
+
+    view_visitas As form:
+        DataSource: ='Resumen de visitas'
+        DefaultMode: =FormMode.View
+        Height: =526
+        Item: =galeria_visitas.Selected
+        SnapToColumns: =false
+        Width: =1323
+        X: =20
+        Y: =131
+        ZIndex: =6
+
+        ID_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ID"
+            Default: =ThisItem.ID
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"ID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =110
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey106 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =32
+                ZIndex: =1
+
+            DataCardValue22 As label:
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(255, 255, 255, 1)
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =32
+                Y: =DataCardKey106.Y + DataCardKey106.Height + 5
+                ZIndex: =2
+
+        "'Nombre de la Cuenta_DataCard1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Nombre_x0020_de_x0020_la_x0020_C"
+            Default: =ThisItem.'Nombre de la Cuenta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Nombre_x0020_de_x0020_la_x0020_C")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue18.Selected
+            Width: =770
+            X: =1
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey22 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue18 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Resumen de visitas'].'Nombre de la Cuenta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Resumen de visitas'.'Nombre de la Cuenta',DataCardValue18.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage22 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue18.Y + DataCardValue18.Height
+                ZIndex: =3
+
+            StarVisible22 As label:
+                Align: =Align.Center
+                Height: =DataCardKey22.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey22.Y
+                ZIndex: =4
+
+        "'Primera visita_DataCard2' As typedDataCard.toggleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Primeravisita"
+            Default: =ThisItem.'Primera visita'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Primeravisita")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue12.Value
+            Width: =200
+            X: =2
+            Y: =0
+            ZIndex: =7
+
+            Label3 As label:
+                Fill: =RGBA(255, 255, 255, 1)
+                Text: =""
+                Width: =92
+                Y: =39
+                ZIndex: =1
+
+            DataCardKey16 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =2
+
+            DataCardValue12 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                FalseFill: =RGBA(255, 255, 255, 1)
+                FalseText: ="No"
+                Height: =40
+                Tooltip: =Parent.DisplayName
+                TrueFill: =RGBA(255, 255, 255, 1)
+                TrueText: ="Si"
+                Width: =73
+                Y: =39
+                ZIndex: =3
+
+            ErrorMessage16 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue12.Y + DataCardValue12.Height
+                ZIndex: =4
+
+            StarVisible16 As label:
+                Align: =Align.Center
+                Height: =DataCardKey16.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16.Y
+                ZIndex: =5
+
+        "'El cliente me recibió_DataCard2' As typedDataCard.toggleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Elclientemerecib_x00f3_"
+            Default: =ThisItem.'Cliente me Atendió'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Elclientemerecib_x00f3_")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue13.Value
+            Width: =200
+            X: =3
+            Y: =0
+            ZIndex: =7
+
+            Label3_1 As label:
+                Fill: =RGBA(255, 255, 255, 1)
+                Text: =""
+                Width: =92
+                Y: =39
+                ZIndex: =1
+
+            DataCardKey17 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =200
+                Wrap: =false
+                ZIndex: =2
+
+            DataCardValue13 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                FalseText: ="No"
+                Height: =40
+                Tooltip: =Parent.DisplayName
+                TrueText: ="Si"
+                Y: =39
+                ZIndex: =3
+
+            ErrorMessage17 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue13.Y + DataCardValue13.Height
+                ZIndex: =4
+
+            StarVisible17 As label:
+                Align: =Align.Center
+                Height: =DataCardKey17.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey17.Y
+                ZIndex: =5
+
+        "'Hora de inicio_DataCard2' As typedDataCard.dateTimeEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Horadellegada"
+            Default: =ThisItem.'Hora de inicio'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Horadellegada")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DateValue3.SelectedDate + Time(Value(HourValue3.Selected.Value), Value(MinuteValue3.Selected.Value), 0)
+            Width: =330
+            X: =6
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey14 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DateValue3 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) / 2
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            HourValue3 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Text(Hour(Parent.Default),"00")
+                DisplayMode: =Parent.DisplayMode
+                Height: =DateValue3.Height
+                Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =DateValue3.Width / 2 - 10
+                X: =DateValue3.X + DateValue3.Width + 10
+                Y: =DateValue3.Y
+                ZIndex: =3
+
+            Separator3 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =HourValue3.Height
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |-
+                    =":"
+                Width: =10
+                Wrap: =false
+                X: =HourValue3.X + HourValue3.Width
+                Y: =HourValue3.Y
+                ZIndex: =4
+
+            MinuteValue3 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Text(Minute(Parent.Default),"00")
+                DisplayMode: =Parent.DisplayMode
+                Height: =HourValue3.Height
+                Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =HourValue3.Width
+                X: =HourValue3.X + HourValue3.Width + Separator3.Width
+                Y: =HourValue3.Y
+                ZIndex: =5
+
+            ErrorMessage14 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =HourValue3.Y + HourValue3.Height
+                ZIndex: =6
+
+            StarVisible14 As label:
+                Align: =Align.Center
+                Height: =DataCardKey14.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey14.Y
+                ZIndex: =7
+
+        "'Hora de cierre_DataCard2' As typedDataCard.dateTimeEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Horadesalida"
+            Default: =ThisItem.'Hora de cierre'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Horadesalida")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DateValue4.SelectedDate + Time(Value(HourValue4.Selected.Value), Value(MinuteValue4.Selected.Value), 0)
+            Width: =300
+            X: =7
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey15 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DateValue4 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultDate: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =(Parent.Width - 60) / 2
+                Y: =39
+                ZIndex: =2
+
+            HourValue4 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Text(Hour(Parent.Default),"00")
+                DisplayMode: =Parent.DisplayMode
+                Height: =DateValue4.Height
+                Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =DateValue4.Width / 2 - 10
+                X: =130
+                Y: =DateValue4.Y
+                ZIndex: =3
+
+            Separator4 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Bold
+                Height: =HourValue4.Height
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: |-
+                    =":"
+                Width: =10
+                Wrap: =false
+                X: =HourValue4.X + HourValue4.Width
+                Y: =HourValue4.Y
+                ZIndex: =4
+
+            MinuteValue4 As dropdown:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Text(Minute(Parent.Default),"00")
+                DisplayMode: =Parent.DisplayMode
+                Height: =HourValue4.Height
+                Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Tooltip: =Parent.DisplayName
+                Width: =HourValue4.Width
+                X: =HourValue4.X + HourValue4.Width + Separator4.Width
+                Y: =HourValue4.Y
+                ZIndex: =5
+
+            ErrorMessage15 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =HourValue4.Y + HourValue4.Height
+                ZIndex: =6
+
+            StarVisible15 As label:
+                Align: =Align.Center
+                Height: =DataCardKey15.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey15.Y
+                ZIndex: =7
+
+        Modalidad_DataCard3 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Modalidad"
+            Default: =ThisItem.Modalidad
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Modalidad")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue16.Selected
+            Width: =220
+            X: =8
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey20 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue16 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Resumen de visitas'].Modalidad)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Resumen de visitas'.Modalidad,DataCardValue16.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue16.Y + DataCardValue16.Height
+                ZIndex: =3
+
+            StarVisible20 As label:
+                Align: =Align.Center
+                Height: =DataCardKey20.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey20.Y
+                ZIndex: =4
+
+        "'Contacto (Cliente)_DataCard2' As typedDataCard.comboBoxMultiSelectEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Contacto"
+            Default: =ThisItem.'Contacto (Cliente)'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Contacto")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue19.SelectedItems
+            Width: =473
+            X: =9
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey23 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue19 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Resumen de visitas'].'Contacto (Cliente)')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Resumen de visitas'.'Contacto (Cliente)',DataCardValue19.SearchText)
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage23 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue19.Y + DataCardValue19.Height
+                ZIndex: =3
+
+            StarVisible23 As label:
+                Align: =Align.Center
+                Height: =DataCardKey23.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
+        "'Asistencia comercial_DataCard2' As typedDataCard.comboBoxMultiSelectEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Asistenciacomercial0"
+            Default: =ThisItem.'Asistencia comercial'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Asistenciacomercial0")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue20.SelectedItems
+            Width: =660
+            X: =0
+            Y: =1
+            ZIndex: =7
+
+            DataCardKey24 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue20 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Resumen de visitas'].'Asistencia comercial')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Resumen de visitas'.'Asistencia comercial',DataCardValue20.SearchText)
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage24 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue20.Y + DataCardValue20.Height
+                ZIndex: =3
+
+            StarVisible24 As label:
+                Align: =Align.Center
+                Height: =DataCardKey24.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey24.Y
+                ZIndex: =4
+
+        "'Participantes (Empresas Fras-le)_DataCard2' As typedDataCard.comboBoxMultiSelectEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Participantes"
+            Default: =ThisItem.'Participantes (Empresas Fras-le)'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Participantes")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue17.SelectedItems
+            Width: =660
+            X: =1
+            Y: =1
+            ZIndex: =7
+
+            DataCardKey21 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue17 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Resumen de visitas'].'Participantes (Empresas Fras-le)')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Resumen de visitas'.'Participantes (Empresas Fras-le)',DataCardValue17.SearchText)
+                Size: =12
+                Template: =ListItemTemplate.Person
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage21 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue17.Y + DataCardValue17.Height
+                ZIndex: =3
+
+            StarVisible21 As label:
+                Align: =Align.Center
+                Height: =DataCardKey21.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey21.Y
+                ZIndex: =4
+
+        "'Resumen de servicios_DataCard2' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Resumendeservicios"
+            Default: =ThisItem.'Resumen de servicios'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Resumendeservicios")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =275
+            MaxLength: =DataSourceInfo([@'Resumen de visitas'], DataSourceInfo.MaxLength, "Resumendeservicios")
+            Required: =false
+            Update: =DataCardValue14.Text
+            Width: =660
+            X: =-1
+            Y: =2
+            ZIndex: =7
+
+            DataCardKey18 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =490
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue14 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =211
+                MaxLength: =Parent.MaxLength
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =12
+                Tooltip: =Parent.DisplayName
+                Width: =611
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage18 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue14.Y + DataCardValue14.Height
+                ZIndex: =3
+
+            StarVisible18 As label:
+                Align: =Align.Center
+                Height: =DataCardKey18.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey18.Y
+                ZIndex: =4
+
+        "'Informaciones adicionales_DataCard2' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Informacionesadicionales"
+            Default: =ThisItem.'Informaciones adicionales'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"Informacionesadicionales")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =275
+            MaxLength: =DataSourceInfo([@'Resumen de visitas'], DataSourceInfo.MaxLength, "Informacionesadicionales")
+            Required: =false
+            Update: =DataCardValue15.Text
+            Width: =440
+            X: =0
+            Y: =2
+            ZIndex: =7
+
+            DataCardKey19 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue15 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =211
+                MaxLength: =Parent.MaxLength
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =12
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage19 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue15.Y + DataCardValue15.Height
+                ZIndex: =3
+
+            StarVisible19 As label:
+                Align: =Align.Center
+                Height: =DataCardKey19.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey19.Y
+                ZIndex: =4
+
+        Attachments_DataCard4 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Resumen de visitas'],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =240
+            Required: =false
+            Update: =DataCardValue21.Attachments
+            Width: =220
+            X: =1
+            Y: =2
+            ZIndex: =7
+
+            DataCardKey105 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue21 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =102
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =10
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage104 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible104 As label:
+                Align: =Align.Center
+                Height: =DataCardKey105.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey105.Y
+                ZIndex: =4
+
+    Group13_8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Button1_36 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(0, 121, 187, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =EditForm(form_visitas);
+                Set(varNE , "Editar ") ;
+                Navigate('03.visitas.edit')
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Editar"
+            Width: =230
+            X: =1116
+            Y: =675
+            ZIndex: =7
+
+        Icon1_14 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =EditForm(form_visitas);
+                Set(varNE , "Editar ") ;
+                Navigate('03.visitas.edit')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =1130
+            Y: =677
+            ZIndex: =8
+
+    Group13_9 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =18
+        ZIndex: =12
+
+        Button1_37 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(203, 102, 102, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Remover"
+            Width: =230
+            X: =844
+            Y: =675
+            ZIndex: =10
+
+        Icon1_16 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =858
+            Y: =677
+            ZIndex: =11
+
+    Group1_8 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Button1_38 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: ="Detalles de la Visita"
+            Width: =603
+            X: =134
+            Y: =22
+            ZIndex: =13
+
+        Icon2_16 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.Location
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =14
+
+    ContainerDeleta_2 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(80, 91, 112, 0.82)
+        Height: =768
+        Visible: =varDeleta
+        Width: =1366
+        ZIndex: =18
+
+        Image2_2 As image:
+            Height: =468
+            Image: =container
+            ImagePosition: =ImagePosition.Stretch
+            Width: =790
+            X: =295
+            Y: =150
+            ZIndex: =1
+
+        Label2_3 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =136
+            Size: =36
+            Text: ="Realmente desea eliminar el registro?"
+            Width: =453
+            X: =457
+            Y: =216
+            ZIndex: =4
+
+        Group14_2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            Si_2 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(203, 102, 102, 1)
+                Height: =115
+                OnSelect: =Remove([@'Resumen de visitas'], galeria_visitas.Selected); If (IsEmpty(Errors([@'Resumen de visitas'], galeria_visitas.Selected)), Back(), Set(varError,false)) 
+                PaddingLeft: =100
+                Text: ="Si, remover"
+                Width: =253
+                X: =708
+                Y: =404
+                ZIndex: =2
+
+            Icon4_6 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.Trash
+                OnSelect: =Remove([@'Resumen de visitas'], galeria_visitas.Selected); If (IsEmpty(Errors([@'Resumen de visitas'], galeria_visitas.Selected)), Back(), Set(varError,false)) 
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =728
+                Y: =421
+                ZIndex: =6
+
+        Group15_3 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            No_3 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(186, 202, 226, 1)
+                Height: =115
+                OnSelect: =Set(varDeleta,false)
+                PaddingLeft: =100
+                Text: ="No, volver"
+                Width: =253
+                X: =386
+                Y: =404
+                ZIndex: =3
+
+            Icon4_5 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.BackArrow
+                OnSelect: =Set(varDeleta,false)
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =407
+                Y: =421
+                ZIndex: =5
+
+    Group13_10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Button1_39 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: |-
+                =ResetForm(form_contato);
+                NewForm(form_contato);Back()
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Volver"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =16
+
+        Icon1_17 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =58
+            Icon: =Icon.BackArrow
+            OnSelect: |-
+                =ResetForm(form_contato);
+                NewForm(form_contato);Back()
+            PaddingBottom: =12
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =12
+            X: =35
+            Y: =27
+            ZIndex: =17
+

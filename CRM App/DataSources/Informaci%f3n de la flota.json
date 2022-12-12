@@ -1,0 +1,53 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2022-11-09T20:26:04.5150000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Miniatura",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Author": "Criado por",
+      "Author#Claims": "Criado por Claims",
+      "ComplianceAssetId": "ID de Ativo de Conformidade",
+      "Created": "Criado",
+      "Edadmedia": "Edad media ",
+      "Editor": "Modificado por",
+      "Editor#Claims": "Modificado por Claims",
+      "ID": "ID",
+      "Modified": "Modificado",
+      "QuantidadeSegmento1": "Quantidade Segmento 1",
+      "QuantidadeSegmento2": "Quantidade Segmento 2",
+      "SegmentodeNegocio": "Segmento de negocio",
+      "SegmentodeNegocio#Id": "Segmento de negocio Id",
+      "SegmentoOperativo": "Segmento operativo",
+      "SegmentoOperativo#Id": "Segmento operativo Id",
+      "Selecccionelosveh_x00ed_culosdel": "Seleccione los vehículos de la flota",
+      "Selecccionelosveh_x00ed_culosdel#Id": "Seleccione los vehículos de la flota Id",
+      "Tama_x00f1_odelaflota": "Tamaño de la flota",
+      "Title": "Title"
+    },
+    "DatasetName": "https://empresasrandon.sharepoint.com/sites/CRMFras-leExport",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Información de la flota",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

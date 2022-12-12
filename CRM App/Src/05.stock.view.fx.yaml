@@ -1,0 +1,800 @@
+"'05.stock.view' As screen.'tabletLayout_Email_ver3.0'":
+    BackgroundImage: ='ssc form'
+
+    Icon1_44 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Edit
+        OnSelect: |-
+            =EditForm(form_stock);
+            Navigate('05.stock.edit')
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        X: =1302
+        ZIndex: =4
+
+    Icon1_43 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Stock], galeria_stock.Selected); If (IsEmpty(Errors([@Stock], galeria_stock.Selected)), Back())
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        X: =1181
+        ZIndex: =5
+
+    form_stock_1 As form:
+        DataSource: =Stock
+        DefaultMode: =FormMode.View
+        Height: =501
+        Item: =galeria_stock.Selected
+        SnapToColumns: =false
+        Width: =1306
+        X: =32
+        Y: =137
+        ZIndex: =8
+
+        "'Cantidad de Stock (Pza)_DataCard1_1' As typedDataCard.numberEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CantidaddeStock"
+            Default: =ThisItem.'Cantidad de Stock (Pza)'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"CantidaddeStock")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =99
+            Required: =false
+            Update: =Value(DataCardValue1_1.Text)
+            Width: =275
+            X: =6
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue1_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: |
+                    =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage1_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1_1.Y + DataCardValue1_1.Height
+                ZIndex: =3
+
+            StarVisible1_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey1_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1_1.Y
+                ZIndex: =4
+
+        "'Nombre de la Cuenta_DataCard5_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Nombre_x0020_de_x0020_la_x0020_C"
+            Default: =ThisItem.'Nombre de la Cuenta'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"Nombre_x0020_de_x0020_la_x0020_C")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue42_1.Selected
+            Width: =904
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey44_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue42_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stock].'Nombre de la Cuenta')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stock.'Nombre de la Cuenta',DataCardValue42_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage43_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue42_1.Y + DataCardValue42_1.Height
+                ZIndex: =3
+
+            StarVisible43_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey44_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =217
+                Y: =DataCardKey44_1.Y
+                ZIndex: =4
+
+        "'Hay información de stock?_DataCard2_1' As typedDataCard.toggleEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Hayinformaci_x00f3_ndestock_x003"
+            Default: =ThisItem.'Hay información de stock?'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"Hayinformaci_x00f3_ndestock_x003")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =true
+            Update: =DataCardValue41_1.Value
+            Width: =275
+            X: =1
+            Y: =0
+            ZIndex: =9
+
+            Label4 As label:
+                Fill: =RGBA(255, 255, 255, 1)
+                Text: =""
+                Y: =37
+                ZIndex: =1
+
+            DataCardKey43_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =251
+                Wrap: =false
+                ZIndex: =2
+
+            DataCardValue41_1 As toggleSwitch:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DisplayMode: =Parent.DisplayMode
+                FalseText: ="No"
+                Tooltip: =Parent.DisplayName
+                TrueText: ="Si"
+                Y: =39
+                ZIndex: =3
+
+            ErrorMessage42_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue41_1.Y + DataCardValue41_1.Height
+                ZIndex: =4
+
+            StarVisible42_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey43_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                X: =221
+                Y: =DataCardKey43_1.Y
+                ZIndex: =5
+
+        "'Stock relacionado con_DataCard2_1' As typedDataCard.comboBoxMultiSelectEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Stockrelacionadocon"
+            Default: =ThisItem.'Stock relacionado con'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"Stockrelacionadocon")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =99
+            Required: =false
+            Update: =DataCardValue38_1.SelectedItems
+            Width: =1188
+            X: =2
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey11_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue38_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stock].'Stock relacionado con')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stock.'Stock relacionado con',DataCardValue38_1.SearchText)
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage11_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue38_1.Y + DataCardValue38_1.Height
+                ZIndex: =3
+
+            StarVisible11_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey11_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_1.Y
+                ZIndex: =4
+
+        Mes_DataCard2_1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Mes"
+            Default: =ThisItem.Mes
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"Mes")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =99
+            Required: =false
+            Update: =DataCardValue39_1.Selected
+            Width: =216
+            X: =3
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey41_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            DataCardValue39_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stock].Mes)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stock.Mes,DataCardValue39_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage40_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue39_1.Y + DataCardValue39_1.Height
+                ZIndex: =3
+
+            StarVisible40_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey41_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey41_1.Y
+                ZIndex: =4
+
+        "'Año de stock_DataCard2_1' As typedDataCard.comboBoxEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="A_x00f1_odestock"
+            Default: =ThisItem.'Año de stock'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"A_x00f1_odestock")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue37_1.Selected
+            Width: =200
+            X: =4
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey10_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 20
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue37_1 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stock].'Año de stock')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stock.'Año de stock',DataCardValue37_1.SearchText)
+                SelectMultiple: =false
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 20
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage10_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue37_1.Y + DataCardValue37_1.Height
+                ZIndex: =3
+
+            StarVisible10_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey10_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_1.Y
+                ZIndex: =4
+
+        "'Dias de stock_DataCard2_1' As typedDataCard.numberEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="D_x00ed_asdestock"
+            Default: =ThisItem.'Dias de stock'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"D_x00ed_asdestock")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =Value(DataCardValue40_1.Text)
+            Width: =216
+            X: =5
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey42_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =27
+                ZIndex: =1
+
+            DataCardValue40_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =27
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage41_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue40_1.Y + DataCardValue40_1.Height
+                ZIndex: =3
+
+            StarVisible41_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey42_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey42_1.Y
+                ZIndex: =4
+
+        Attachments_DataCard2_1 As typedDataCard.attachmentsEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Stock],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue43_1.Attachments
+            Width: =339
+            X: =7
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey45_1 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                ZIndex: =1
+
+            DataCardValue43_1 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =81
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =10
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Y: =39
+                ZIndex: =2
+
+            ErrorMessage44_1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue43_1.Y + DataCardValue43_1.Height
+                ZIndex: =3
+
+            StarVisible44_1 As label:
+                Align: =Align.Center
+                Height: =DataCardKey45_1.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey45_1.Y
+                ZIndex: =4
+
+    Group1_16 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =11
+
+        Button1_65 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(101, 174, 255, 1)
+            Font: =Font.'Lato Light'
+            Height: =89
+            OnSelect: =Navigate('01.contacto')
+            PaddingLeft: =90
+            Size: =30
+            Text: ="Stock"
+            Width: =235
+            X: =134
+            Y: =22
+            ZIndex: =9
+
+        Icon2_24 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledColor: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.View
+            Height: =37
+            Icon: =Icon.Items
+            Width: =44
+            X: =156
+            Y: =48
+            ZIndex: =10
+
+    Group13_20 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Button1_66 As button:
+            BorderThickness: =0
+            Fill: =RGBA(186, 202, 226, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =90
+            OnSelect: =Back()
+            PaddingBottom: =0
+            PaddingTop: =45
+            Size: =12
+            Text: ="Volver"
+            Width: =90
+            X: =22
+            Y: =21
+            ZIndex: =12
+
+        Icon1_33 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =58
+            Icon: =Icon.BackArrow
+            OnSelect: =Back()
+            PaddingBottom: =12
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =12
+            X: =35
+            Y: =27
+            ZIndex: =13
+
+    Group13_21 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        Button1_67 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(0, 121, 187, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: |-
+                =EditForm(form_stock);
+                Navigate('05.stock.edit')
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Editar"
+            Width: =230
+            X: =1116
+            Y: =675
+            ZIndex: =15
+
+        Icon1_34 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =EditForm(form_stock);
+                Navigate('05.stock.edit')
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =1130
+            Y: =677
+            ZIndex: =16
+
+    ContainerDeleta_5 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(80, 91, 112, 0.82)
+        Height: =768
+        Visible: =varDeleta
+        Width: =1366
+        ZIndex: =20
+
+        Image2_5 As image:
+            Height: =468
+            Image: =container
+            ImagePosition: =ImagePosition.Stretch
+            Width: =790
+            X: =295
+            Y: =150
+            ZIndex: =1
+
+        Label2_6 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =136
+            Size: =36
+            Text: ="Realmente desea eliminar el registro?"
+            Width: =453
+            X: =457
+            Y: =216
+            ZIndex: =4
+
+        Group14_5 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            Si_5 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(203, 102, 102, 1)
+                Height: =115
+                OnSelect: =Remove([@Stock], galeria_stock.Selected); If (IsEmpty(Errors([@Stock], galeria_stock.Selected)), Back())
+                PaddingLeft: =100
+                Text: ="Si, remover"
+                Width: =253
+                X: =708
+                Y: =404
+                ZIndex: =2
+
+            Icon4_12 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.Trash
+                OnSelect: =Remove([@Stock], galeria_stock.Selected); If (IsEmpty(Errors([@Stock], galeria_stock.Selected)), Back())
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =728
+                Y: =421
+                ZIndex: =6
+
+        Group15_6 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+            No_6 As button:
+                Align: =Align.Left
+                BorderStyle: =BorderStyle.None
+                Fill: =RGBA(186, 202, 226, 1)
+                Height: =115
+                OnSelect: =Set(varDeleta,false)
+                PaddingLeft: =100
+                Text: ="No, volver"
+                Width: =253
+                X: =386
+                Y: =404
+                ZIndex: =3
+
+            Icon4_11 As icon.CheckBadge:
+                Color: =RGBA(255, 255, 255, 1)
+                Height: =82
+                Icon: =Icon.BackArrow
+                OnSelect: =Set(varDeleta,false)
+                PaddingBottom: =10
+                PaddingTop: =10
+                X: =407
+                Y: =421
+                ZIndex: =5
+
+    Group13_22 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =18
+        ZIndex: =20
+
+        Button1_68 As button:
+            Align: =Align.Left
+            BorderThickness: =0
+            Fill: =RGBA(203, 102, 102, 1)
+            Font: =Font.'Lato Light'
+            FontWeight: =FontWeight.Normal
+            Height: =75
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =0
+            PaddingLeft: =100
+            PaddingTop: =0
+            Size: =16
+            Text: ="Remover"
+            Width: =230
+            X: =844
+            Y: =675
+            ZIndex: =18
+
+        Icon1_35 As icon.Add:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =70
+            Icon: =Icon.Trash
+            OnSelect: =Set(varDeleta,true)
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =15
+            Width: =70
+            X: =858
+            Y: =677
+            ZIndex: =19
+
